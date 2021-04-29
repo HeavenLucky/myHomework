@@ -1,0 +1,1814 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://blog.csdn.net/weixin_42350212/category_10959263.html"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="report" content='{"pid": "blog", "spm":"1001.2014"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <meta name="applicable-device" content="pc">
+    <link  href="https://g.csdnimg.cn/static/logo/favicon32.ico"  rel="shortcut icon" type="image/x-icon" />
+    <title>Linux系统故障解决_lexsaints-CSDN博客</title>
+    <meta name="description" content="Linux运维问题解决(2)——Linux设置定时重启系统的方法：定时任务crontab 和 编写脚本,Linux运维问题解决(1)——Linux 定时任务 crontab 配置及示例,在 Linux、 FreeBSD、 OpenBSD等UNIX操作系统 中查看 所有安装的软件或包,Linux防火墙,iptables基本原理,netfilter">
+    <script src="//g.csdnimg.cn/tingyun/1.8.5/blog.js" type='text/javascript'></script>
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/css/column_enter-b8e0d1dddb.min.css">
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin-clickmove/skin-clickmove-8a94f6ca35.min.css">
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var isCorporate = false;//注释删除enterprise
+        var username =  "weixin_42350212";
+        var skinImg = "white";
+        var blog_address = "https://lexsaints.blog.csdn.net";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_42350212/category_10959263.html";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile.csdnimg.cn/0/7/E/3_weixin_42350212";
+        var articleTitle = "lexsaints";
+        var articleDesc = "Linux运维问题解决(2)——Linux设置定时重启系统的方法：定时任务crontab 和 编写脚本,Linux运维问题解决(1)——Linux 定时任务 crontab 配置及示例,在 Linux、 FreeBSD、 OpenBSD等UNIX操作系统 中查看 所有安装的软件或包,Linux防火墙,iptables基本原理,netfilter";
+        var articleTitles = "Linux系统故障解决_lexsaints-CSDN博客";
+        var nickName = "lexsaints";
+        var articleDetailUrl = "";
+        if(window.location.host.split('.').length == 3) {
+            blog_address = blogUrl + username;
+        }
+        var skinStatus = "Black";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+    </script>
+        <meta name="toolbar" content='{"type":"1"}'>
+        <script>
+            window.csdn = window.csdn ? window.csdn : {};
+            window.csdn.toolbarIsBlack = true;
+            window.csdn.sideToolbar = {
+                options: {
+                    theme : "black"
+                }
+            }
+        </script>
+    <script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js" type="text/javascript"></script>
+    <script src='//g.csdnimg.cn/common/csdn-report/report.js' type='text/javascript'></script>
+    <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+    <script src="https://dup.baidustatic.com/js/ds.js"></script>
+</head>
+<body class="nodata " style="">
+    <script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+<link rel="stylesheet" href="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.css">
+<script src="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/user-login/2.3.2/user-login.js"></script>
+<script>
+	$("#msgToastText").hide()
+</script>
+<div class="skin-boxshadow"></div>
+<div id="userSkin">
+	<div class="user-skin-box">
+		<p class="user-skin-title">
+        <span>自定义博客皮肤<span class="vip-get">VIP专享<span></span>
+        <span class="close-bt bt-back"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+        </p>
+		<div class="user-skin-item">
+			<div class="user-skin-left"><span>*</span>博客头图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadHeaderimg" style="display:none" value="">
+				<label for="uploadHeaderimg" class="upload-img">
+					<div class="icon-box">
+					<img class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png" alt="">
+					<img style="display:none" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageBlack.png" alt="">
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p  class="user-skin-tip">格式为PNG、JPG，宽度*高度大于1920*100像素，不超过2MB，主视觉建议放在右侧，请参照线上博客头图</p>
+			    <p  class="user-skin-color">请上传大于1920*100像素的图片！</p>
+			</div>
+		</div>
+		<div class="user-skin-item">
+            <div class="user-skin-left"><span></span>博客底图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadBgimg" style="display:none" value="">
+				<label for="uploadBgimg" class="upload-img">
+					<div class="icon-box">
+					<img class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png" alt="">
+					<img style="display:none" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageBlack.png" alt="">					
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p class="user-skin-tip">图片格式为PNG、JPG，不超过1MB，可上下左右平铺至整个背景</p>
+			</div>
+		</div>
+		<div class="user-skin-item">
+            <div class="user-skin-left"><span></span>栏目图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadColumnimg" style="display:none" value="">
+				<label for="uploadColumnimg" class="upload-img">
+					<div class="icon-box">
+					<img class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png" alt="">
+					<img style="display:none" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageBlack.png" alt="">					
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p class="user-skin-tip">图片格式为PNG、JPG，图片宽度*高度为300*38像素，不超过0.5MB</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>主标题颜色：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="topicColor" placeholder="#ffffff">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>Hover：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="topicHoverColor" placeholder="#ffffff">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>副标题颜色：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="subTopicColor" placeholder="#b8b8b8">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-bt">
+			<a href="javascript:;" class="user-skin-preview bt">预览</a>
+			<a href="javascript:;" class="user-skin-cancel bt bt-back">取消</a>
+			<a href="javascript:;" class="user-skin-refer bt">提交</a>
+		</div>
+	</div>
+</div>
+<div id="cropBox">
+	<div class="crop-box">
+		<p class="crop-box-title">
+        	<span>自定义博客皮肤</span>
+        	<span class="close-bt  bt-back"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+        </p>
+		<div class="crop-img-before">
+			<img src="" alt="" id="cropImg">
+		</div>
+		<div class="crop-zoom">
+			<a href="javascript:;" class="bt-reduce">-</a><a href="javascript:;" class="bt-add">+</a>
+		</div>
+		<div class="crop-img-after">
+			<div  class="final-img"></div>
+		</div>
+		<div class="crop-bt">
+			<a href="javascript:;" class="bt-prev bt-back">上一步</a><a href="javascript:;" class="bt-next">保存</a>
+		</div>
+	</div>
+</div>
+<header>
+	<div class="container d-flex clearfix">
+		<div class="header-content-box " style=" padding:0;">
+		<div class="title-box">
+			<h1 class="title-blog ">
+				<a href="https://lexsaints.blog.csdn.net" style="">lexsaints</a>
+			</h1>
+			<p class="description " style="">Linux开发者 Windows域控Exchange架构师 Java开发者 Python爱好者 虚拟机玩家 服务器搭建者 健身爱好者(卧推90kg硬拉120深蹲100）【微信公众号：Linux黑客小课堂】 </p>
+		</div>
+		<div class="opt-box d-flex justify-content-end">
+				<a class="btn btn-sm" href="http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_42350212/category_10959263.html" id="meUser" data-report-click='{"mod":"popu_832","spm":"1001.2014.3001.5240","dest":"http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_42350212/category_10959263.html"}' data-report-view='{"mod":popu_832","spm":"1001.2014.3001.5240","dest":"http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_42350212/category_10959263.html"}'><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/useSkinBlack.png" alt="">我也要用</a>
+		</div>
+		</div>
+	</div>
+</header>
+<div class="container clearfix pt0 " id="mainBox">
+<aside class="blog_container_aside">
+	<div id="asideProfile" class="aside-box">
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://lexsaints.blog.csdn.net" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4121","dest":"https://lexsaints.blog.csdn.net","ab":"new"}'>
+                <img src="https://profile.csdnimg.cn/0/7/E/3_weixin_42350212" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div class="profile-intro-name-boxTop">
+                <a href="https://lexsaints.blog.csdn.net" class="" id="uid" title="lexsaints" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4122","dest":"https://lexsaints.blog.csdn.net","ab":"new"}'>
+                    <span class="name " username="weixin_42350212">lexsaints</span>
+                </a>
+                <span>
+                </span>
+                <span class="flag expert-blog">
+                <img class="identity" src="https://csdnimg.cn/release/blogv2/dist/mobile/img/expertNew.png" alt="">
+                <span class="bubble">CSDN认证博客专家</span>
+                </span>
+                <span class="flag company-blog">
+                <span class="bubble">CSDN认证企业博客</span>
+                </span>
+            </div>
+            <div class="profile-intro-name-boxFooter">
+                <span class="personal-home-page personal-home-years">码龄3年</span>
+                    <span class="personal-home-page">
+                    <a class="personal-home-certification" href="https://i.csdn.net/#/uc/profile?utm_source=14998968" target="_blank" title="Python领域优质创作者">
+                    <img src="https://img-home.csdnimg.cn/images/20210412060958.png" alt="">
+                    Python领域优质创作者
+                    </a>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="362">
+            <a href="https://lexsaints.blog.csdn.net" data-report-click='{"mod":"1598321000_001","spm":"1001.2101.3001.4310"}' data-report-query="t=1">  
+                <dt><span class="count">362</span></dt>
+                <dd class="font">原创</dd>
+            </a>
+        </dl>
+        <dl class="text-center" data-report-click='{"mod":"1598321000_002","spm":"1001.2101.3001.4311"}' title="7">
+            <a href="https://blog.csdn.net/rank/list/weekly" target="_blank">
+                <dt><span class="count">7</span></dt>
+                <dd class="font">周排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" title="1453">
+            <a href="https://blog.csdn.net/rank/list/total" data-report-click='{"mod":"1598321000_003","spm":"1001.2101.3001.4312"}' target="_blank">
+                <dt><span class="count">1453</span></dt>
+                <dd class="font">总排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" style="min-width:58px" title="1692572">  
+            <dt><span class="count">169万+</span></dt>
+            <dd>访问</dd>
+        </dl>
+        <dl class="text-center" title="7级,点击查看等级说明">
+            <dt><a href="https://blog.csdn.net/blogdevteam/article/details/103478461" target="_blank">
+                <img class="level" src="https://csdnimg.cn/identity/blog7.png">
+            </a>
+            </dt>
+            <dd>等级</dd>
+        </dl>
+    </div>
+    <div class="item-rank"></div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="16421">
+            <dt><span class="count">1万+</span></dt>
+            <dd>积分</dd>
+        </dl>
+         <dl class="text-center" id="fanBox" title="18855">
+            <dt><span class="count" id="fan">1万+</span></dt>
+            <dd>粉丝</dd>
+        </dl>
+        <dl class="text-center" title="2447">
+            <dt><span class="count">2447</span></dt>
+            <dd>获赞</dd>
+        </dl>
+        <dl class="text-center" title="1348">
+            <dt><span class="count">1348</span></dt>
+            <dd>评论</dd>
+        </dl>
+        <dl class="text-center" title="7116">
+            <dt><span class="count">7116</span></dt>
+            <dd>收藏</dd>
+        </dl>
+    </div>
+    <div class="aside-box-footer" data-report-view='{"spm":"3001.4296"}'>
+        <div class="badge-box d-flex">
+            <div class="badge d-flex">
+                <div class="icon-badge" title="新人勋章">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/blinknewcomer@240.png" alt="新人勋章">
+                    </div>
+                </div>
+                <div class="icon-badge" title="GitHub">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/github@240.png" alt="GitHub">
+                    </div>
+                </div>
+                <div class="icon-badge" title="签到王者">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qiandao250@240.png" alt="签到王者">
+                    </div>
+                </div>
+                <div class="icon-badge" title="阅读者勋章Lv3">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/yuedu30@240.png" alt="阅读者勋章Lv3">
+                    </div>
+                </div>
+                <div class="icon-badge" title="持之以恒">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/chizhiyiheng@240.png" alt="持之以恒">
+                    </div>
+                </div>
+                <div class="icon-badge" title="1024勋章">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/1024@240.png" alt="1024勋章">
+                    </div>
+                </div>
+                <div class="icon-badge" title="勤写标兵Lv4">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qixiebiaobing4@240.png" alt="勤写标兵Lv4">
+                    </div>
+                </div>
+                <div class="icon-badge" title="分享王者">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/fenxiangwangzhe@240.png" alt="分享王者">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box">
+        <a class="bt-button personal-letter" href="https://im.csdn.net/chat/weixin_42350212" target="_blank" rel="noopener">私信</a>
+        </div>
+        <div class="opt-letter-watch-box"> 
+            <a class="personal-watch bt-button" id="btnAttent" >关注</a>  
+        </div>
+    </div>
+</div>
+<div id="asideSearchArticle" class="aside-box">
+	<div class="aside-content search-comter">
+    <div class="aside-search aside-search-blog">         
+        <input type="text" class="input-serch-blog" name="" autocomplete="off" value="" id="search-blog-words" placeholder="搜博主文章">
+        <a class="btn-search-blog">
+                    <img src="//csdnimg.cn/cdn/content-toolbar/csdn-white-search.png?v=1587006908">
+        </a>
+    </div>
+    </div>
+</div>
+
+<div id="asideCustom" class="aside-box custom-box">
+    <h3 class="aside-title">微信公众号&#xff1a;hacklex</h3>
+    <div class="aside-content clearfix">
+        <p> <b></b></p>
+<div class="p-name">
+ <b>点击“jk资源”小姐姐给你发送资源哦~</b>
+</div>
+<b> </b> 
+<marquee>
+ <b><font color="#090901"> 让安全技术不再神秘&#xff0c;让程序变的更加有趣</font></b> 
+</marquee>
+<br />
+<div class="p-img fl"> 
+ <img src="https://img-blog.csdnimg.cn/20201201104329340.jpeg?x-oss-process&#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FzaGVyMTE3,size_16,color_FFFFFF,t_70" width="250" height="250" alt="watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FzaGVyMTE3,size_16,color_FFFFFF,t_70" />
+</div> 
+<br />
+    </div>
+</div>    
+
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+			<li>
+				<a href="https://lexsaints.blog.csdn.net/article/details/80628539" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://lexsaints.blog.csdn.net/article/details/80628539","ab":"new"}'>
+				python列表相加的方法：两个list [] 加法
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+					<span class="read">147583</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://lexsaints.blog.csdn.net/article/details/80547331" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://lexsaints.blog.csdn.net/article/details/80547331","ab":"new"}'>
+				移动硬盘 无法读取 插入电脑没反应 无法识别 怎么办
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+					<span class="read">58465</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://lexsaints.blog.csdn.net/article/details/80551677" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://lexsaints.blog.csdn.net/article/details/80551677","ab":"new"}'>
+				python语法（二）——截取字符串的方法详解
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+					<span class="read">54095</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://lexsaints.blog.csdn.net/article/details/81123932" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://lexsaints.blog.csdn.net/article/details/81123932","ab":"new"}'>
+				Nginx的超时keeplive_timeout配置详解
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+					<span class="read">52692</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://lexsaints.blog.csdn.net/article/details/80558553" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://lexsaints.blog.csdn.net/article/details/80558553","ab":"new"}'>
+				shell脚本 获取第几行 第几列 的命令 awk sed
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+					<span class="read">49786</span>
+                </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content">
+        <ul>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10971283.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10971283.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20210412152812292.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">pygame实战开发100例</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7716334.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7716334.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20210406144951489.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">渗透测试实战</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">21篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7702669.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7702669.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20200515150917635.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Linux</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">42篇</span>
+                </a>
+            </li>
+            <li class="indentation">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10959215.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10959215.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20210408144909668.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Linux高性能服务器搭建</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+            <li class="indentation">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10959263.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10959263.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20210408145707671.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Linux系统故障解决</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">25篇</span>
+                </a>
+            </li>
+            <li class="indentation">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10959302.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10959302.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20210408150631673.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Linux下Oracle管理</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">21篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7702659.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7702659.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20200515151957271.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Windows</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">36篇</span>
+                </a>
+            </li>
+            <li class="indentation">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10649706.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10649706.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201210090616159.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">PowerShell自动化</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">20篇</span>
+                </a>
+            </li>
+            <li class="indentation">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10959170.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10959170.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/2021040814403047.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Windows AD/Exchange管理</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+            <li class="indentation">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10649685.html" data-report-click='{"mod":"popu_826","spm":"1001.2101.3001.4230","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10649685.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201210084656388.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Windows域策略</span>
+                        <img class="tip" src="https://csdnimg.cn/release/blogv2/dist/pc/img/payMoney.png" alt="">
+                    </span>
+                    <span class="count float-right">15篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_11016813.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_11016813.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756916.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">笔记</span>
+                    </span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10993955.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10993955.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756780.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">安全</span>
+                    </span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10805772.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10805772.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756919.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">开发工具</span>
+                    </span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10974636.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10974636.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20210413144112284.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">从0开始搭建Redis分布式集群</span>
+                    </span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10652724.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10652724.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756925.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">SuseLinux</span>
+                    </span>
+                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10689722.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10689722.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">关于人生</span>
+                    </span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10794657.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10794657.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756754.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">openbsd</span>
+                    </span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_10273132.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_10273132.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20190927151132530.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">selinux</span>
+                    </span>
+                    <span class="count float-right">12篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7810820.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7810820.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20200724162835751.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">服务器</span>
+                    </span>
+                    <span class="count float-right">12篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7800921.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7800921.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756928.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Nginx</span>
+                    </span>
+                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7758687.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7758687.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756930.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">jQuery</span>
+                    </span>
+                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7753449.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7753449.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756928.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">sqlserver</span>
+                    </span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7726831.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7726831.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">区块链</span>
+                    </span>
+                    <span class="count float-right">10篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7702670.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7702670.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756926.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Hadoop</span>
+                    </span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7708068.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7708068.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756923.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">硬件</span>
+                    </span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7710201.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7710201.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756928.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">大数据</span>
+                    </span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7716335.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7716335.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756780.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">mysql</span>
+                    </span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7723742.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7723742.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">docker</span>
+                    </span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7724974.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7724974.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756913.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">php</span>
+                    </span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7725258.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7725258.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756738.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">redis</span>
+                    </span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7750682.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7750682.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">hibernate</span>
+                    </span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7754073.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7754073.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756916.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">数据结构</span>
+                    </span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7758688.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7758688.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756923.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">easyui</span>
+                    </span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7810819.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7810819.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756724.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Apache</span>
+                    </span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7818843.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7818843.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">计算机网络通信</span>
+                    </span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7836835.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7836835.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756780.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">GitHub</span>
+                    </span>
+                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7841239.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7841239.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756724.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">svn</span>
+                    </span>
+                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_8794080.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_8794080.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">openwrt</span>
+                    </span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7702668.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7702668.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20200624225502315.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">Java</span>
+                    </span>
+                    <span class="count float-right">35篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7702671.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7702671.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20200625183343986.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">python</span>
+                    </span>
+                    <span class="count float-right">36篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7708567.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7708567.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20200624225633632.jpg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">虚拟机</span>
+                    </span>
+                    <span class="count float-right">30篇</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="clearfix" target="_blank" href="https://blog.csdn.net/weixin_42350212/category_7710155.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42350212/category_7710155.html","ab":"new"}'>
+                    <img src="https://img-blog.csdnimg.cn/20190927151043371.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        <span class="text">shell编程</span>
+                    </span>
+                    <span class="count float-right">25篇</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p class="text-center">
+        <a class="flexible-btn" data-fbox="aside-archive"><img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowDownBlack.png" alt=""></a>
+    </p>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://lexsaints.blog.csdn.net/article/details/115399658#comments_16186366" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115399658#comments_16186366","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115399658#comments_16186366","ab":"new"}'>python你TM太皮了&mdash;&mdash;区区30行代码就能记录键盘的一举一动</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/mukes" class="user-name" target="_blank">mukes: </a>
+                    <span class="code-comments">学习了！b（￣▽￣）d</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://lexsaints.blog.csdn.net/article/details/116159493#comments_16186341" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/116159493#comments_16186341","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/116159493#comments_16186341","ab":"new"}'>【渗透测试实战】具体案例&mdash;&mdash;讲讲SQL注入攻击是怎么回事？</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/mukes" class="user-name" target="_blank">mukes: </a>
+                    <span class="code-comments">学习了！b（￣▽￣）d</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://lexsaints.blog.csdn.net/article/details/115703709#comments_16186313" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115703709#comments_16186313","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115703709#comments_16186313","ab":"new"}'>【删库不跑路】&mdash;Linux系统自杀实验 rm -rf /*  及如何抢救和预防</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/mukes" class="user-name" target="_blank">mukes: </a>
+                    <span class="code-comments">针不戳呀，写的针不戳！</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://lexsaints.blog.csdn.net/article/details/115399658#comments_16185548" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115399658#comments_16185548","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115399658#comments_16185548","ab":"new"}'>python你TM太皮了&mdash;&mdash;区区30行代码就能记录键盘的一举一动</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/mukes" class="user-name" target="_blank">mukes: </a>
+                    <span class="code-comments">学习了！b（￣▽￣）d</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://lexsaints.blog.csdn.net/article/details/115703709#comments_16185461" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115703709#comments_16185461","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://lexsaints.blog.csdn.net/article/details/115703709#comments_16185461","ab":"new"}'>【删库不跑路】&mdash;Linux系统自杀实验 rm -rf /*  及如何抢救和预防</a>
+                <p class="comment ellipsis">
+                    <a href="https://lexsaints.blog.csdn.net" class="user-name" target="_blank">lexsaints: </a>
+                    <span class="code-comments">可以参考 我的博文，写一个Linux板的回收站</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="asideArchive" class="aside-box" style="display:block!important; width:300px;">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+            <li class="clearfix">
+            <a href="https://lexsaints.blog.csdn.net/article/details/116271172" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://lexsaints.blog.csdn.net/article/details/116271172","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://lexsaints.blog.csdn.net/article/details/116271172","ab":"new"}'>Windows域策略设置 IE信任站点【全域策略生效】</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://lexsaints.blog.csdn.net/article/details/116260805" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://lexsaints.blog.csdn.net/article/details/116260805","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://lexsaints.blog.csdn.net/article/details/116260805","ab":"new"}'>一起来学pygame吧 游戏开发30例（七）——飞机大战 小游戏 丨蓄力计划</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://lexsaints.blog.csdn.net/article/details/116159493" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://lexsaints.blog.csdn.net/article/details/116159493","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://lexsaints.blog.csdn.net/article/details/116159493","ab":"new"}'>【渗透测试实战】具体案例——讲讲SQL注入攻击是怎么回事？</a>
+            </li>
+        </ul>
+        <div class="archive-bar"></div>
+        <div class="archive-box">
+                <div class="archive-title">2021</div> 
+                <div class="archive-content">
+                    <div class="archive-item">
+                        <a href="https://lexsaints.blog.csdn.net/article/month/2021/04" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://lexsaints.blog.csdn.net/article/month/2021/04"}'>
+                        <span class="time">04月</span>
+                        <span class="count">25篇</span>
+                        </a>
+                    </div>
+                    <div class="archive-item">
+                        <a href="https://lexsaints.blog.csdn.net/article/month/2021/03" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://lexsaints.blog.csdn.net/article/month/2021/03"}'>
+                        <span class="time">03月</span>
+                        <span class="count">18篇</span>
+                        </a>
+                    </div>
+                    <div class="archive-item">
+                        <a href="https://lexsaints.blog.csdn.net/article/month/2021/02" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://lexsaints.blog.csdn.net/article/month/2021/02"}'>
+                        <span class="time">02月</span>
+                        <span class="count">17篇</span>
+                        </a>
+                    </div>
+                    <div class="archive-item">
+                        <a href="https://lexsaints.blog.csdn.net/article/month/2021/01" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://lexsaints.blog.csdn.net/article/month/2021/01"}'>
+                        <span class="time">01月</span>
+                        <span class="count">35篇</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="archive-list-item"><a href="https://lexsaints.blog.csdn.net/article/month/2020/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2020年</span><span class="num">132篇</span></a></div>
+                <div class="archive-list-item"><a href="https://lexsaints.blog.csdn.net/article/month/2019/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2019年</span><span class="num">26篇</span></a></div>
+                <div class="archive-list-item"><a href="https://lexsaints.blog.csdn.net/article/month/2018/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2018年</span><span class="num">121篇</span></a></div>
+        </div>
+    </div>
+</div>
+	<div id="footerRightAds" class="isShowFooterAds">
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PC-博客详情页-左下视窗（300*600） -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1173711872"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&a=2488&c=0&k=&spm=1001.2015.3001.5001&d=1&t=3&u=ee386f2773c84aac8567cb06b586067e" style="display: block;width: 0px;height: 0px;"></div>
+		</div>
+	</div>
+    <!-- 详情页显示目录 -->
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-tooltip/2.4/user-tooltip.js"></script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-medal/1.0.6/user-medal.js"></script><main>
+    <div id="column">
+    <div class="column_info_box">
+            <div class="column_info_box_all">
+                <div class="left_mode_box">
+                    <div class="left_img"><img src="https://img-blog.csdnimg.cn/20210408145707671.jpg?x-oss-process=image/resize,m_fixed,h_224,w_224" alt=""
+                                onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    </div>
+                    <div class="middle_con">
+                        <div class="column_info clearfix">
+                            <div class="column_info_text">
+                                <div class="column_top_template">
+                                    <h3 class="column_title oneline">Linux系统故障解决</h3>
+                                        <!--判断付费专栏是否是更新中的状态 需要后端-->
+                                            <div class="column_button up_column_button">更新中</div>
+                                        <!--判断付费专栏是否是更新中的状态-->
+                                </div>
+                                <div class="column_text">
+                                    <span class="column_text_desc">Linux系统管理及故障解决</span>
+                                    <span class="management_article_box">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column_operating">
+                            <span class="column_data">
+                                <span>文章数：<span class="mumber-color">25</span></span>
+                                <span>访问量：<span class="mumber-color">36166</span></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_mode_box">
+                    <div class="right-column-pay">
+                        <div class="subscribe-price">
+                                <span class="now-price">¥19.90</span>
+                                    <span class="old-price">¥99.00</span>
+                        </div>
+                        <div class="subscribe-status ">
+                                    <a class="bt-subscribe bt-column" data-report-click='{"mod":"popu_825","strategy":"pc付费专栏未登录","ab":"new"}' data-report-view='{"mod":"popu_825","strategy":"pc付费专栏未登录","ab":"new"}'>
+                                      订阅专栏
+                                    </a>
+                        </div>
+                        <div class="subscribe-count">
+                        <span class="tip-subscribe-column">
+                            <span>购买须知？</span>
+                            <div class="tip">
+                            <p class="text">本专栏为图文内容，最终完结不会低于15篇文章。</p>
+                            <p class="text">订阅专栏，享有该专栏一年阅读权限。</p>
+                            <p class="text">本专栏为虚拟产品，一经付款概不退款，敬请谅解。 </p>
+                            <span class="bar"></span>
+                            <span class="bt-close">
+                            <svg t="1514979480251" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7682" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M896 0L512 384 128 0 0 128l384 384L0 896l128 128 384-384 384 384 128-128-384-384 384-384z" p-id="7683" fill="#888888"></path></svg>
+                            </span>
+                            </div>
+                        </span></div>
+                    </div>
+                </div> 
+           </div>
+        </div>
+        <!--专栏个人简介-->
+        <div class="column_person_box">
+        <div class="column_person_box_bg">
+            <h3 class="column_person_tit"><span class="author text">作者:
+            </span><span class="text">
+                     lexsaints
+            </span>
+            </h3>
+            <div class="column_person_con have__introduce">
+                Python领域优质创作者 网络安全工程师 Linux开发者 Windows域控Exchange架构师 Java开发者
+            </div>
+        </div>
+        </div>
+<ul class="column_article_list">
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/113929642" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux运维问题解决(1)——Linux 定时任务 crontab 配置及示例
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录cron介绍crontab的使用 实例linux内置的cron进程能帮我们实现这些需求，cron搭配shell脚本，非常复杂的指令也没有问题。cron介绍我们经常使用的是crontab命令是cron table的简写，它是cron的配置文件，也可以叫它作业列表，我们可以在以下文件夹内找到相关配置文件。    /var/spool/cron/ 目录下存放的是每个用户包括root的crontab任务，每个任务以创建者的名字命名    /etc/cr...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2021-02-22 10:25:45
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    195
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/113929368" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux运维问题解决(2)——Linux设置定时重启系统的方法：定时任务crontab 和 编写脚本
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录crontab定时任务方法1、确保crond服务正常运行2、crond服务相关命令3、编辑crond定时任务编写自动重启脚本1、定时重启脚本2、设置开机启动3、重启系统之后，自动重启进程会启动crontab定时任务方法1、确保crond服务正常运行#查看crond服务状态[root@mail ~]# service crond statuscrond (pid  2265) is running...2、crond服务相关命令#停止crond服
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2021-02-22 11:40:23
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    213
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/113625130" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  在 Linux、 FreeBSD、 OpenBSD等UNIX操作系统 中查看 所有安装的软件或包
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录Red Hat/Fedora Core/CentOS LinuxDebian LinuxUbuntu LinuxFreeBSDOpenBSDRed Hat/Fedora Core/CentOS LinuxType the following command to get list of all installed software# rpm -qa | lessDebian LinuxType the following command to get list of 
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2021-02-04 09:52:49
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    152
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/112464088" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理系列（1）——文件管理权限详解 chgrp chown chmod rwx等等
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  Linux 系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安全性，Linux 系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。在 Linux 中我们通常使用以下两个命令来修改文件或目录的所属用户与权限：chown (change ownerp) ： 修改所属用户与组。	chmod (change mode) ： 修改用户的权限。下图中通过 chown 来授权用户，通过 chmod 为用户设置可以开门的权限。在 Linux 中我们
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2021-01-11 11:25:35
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    100
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/111468013" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统故障解决（1）——开机界面卡住 进不了系统
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录问题描述问题排查步骤1、重启进入单用户模式2、进入到内核参数修改界面，如下图3、修改内核参数4、单用户模式界面5、排查/etc/inittab配置文件6、排查相关服务解决方案：1、再次进入单用户模式，查看开机自启程序2、从自启动服务中 删除 mysql和mysqld3、然后重启，成功进入系统问题描述有时，启动我们的Linux服务器时感觉关机前也没做什么操作但是莫名其妙的，系统就卡在开机界面，无法启动系统无法开机，可能有多种原因.
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-12-21 10:08:49
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    878
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    3
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/110424511" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（4）——小米开源监控 open-falcon介绍及搭建流程详解
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录1.open-falcon介绍1.1特点1.2架构2.准备环境2.1配置yum源2.2安装git2.3安装go语言环境（go&gt;=1.6）2.4安装redis2.5安装MySQL2.5.1配置epel源2.5.2安装rpm包2.5.3安装MySQL 并且查看3.后端安装3.1环境准备3.2初始化数据库3.3编译源码打包4.部署后端4.1环境准备4.2修改配置4.3模块及配置文件所在位置4.4修改aggregator的
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-12-01 11:04:38
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    230
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    2
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/110423453" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（5）——使用yum快速搭建LAMP环境【方便快捷版】
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录1.安装Apache2.安装MySQL3.安装PHP4.安装其他模块重启服务5.修改权限6.安装phpMyAdmin7.配置Apache重启Apache服务1.安装Apachesudo apt-get install apache2测试： 浏览器访问http://127.0.0.1的IP，出现It Works!网页。查看状态： service apache2 status/start/stop/restartWeb目录： /var/www安装
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-12-01 10:29:13
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    135
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    2
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/110367974" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（6）——Linux下启动Redis服务的几种方法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录后台启动通过指定配置文件启动自定义脚本启动redis，开机自启动后台启动进入redis根目录，执行命令：#加上‘&amp;’号使redis以后台程序方式运行，此种方式启动，将加载默认的配置文件。nohup redis-server &amp;通过指定配置文件启动可以为redis服务启动指定配置文件，例如配置为/etc/redis/redis.conf，进入redis根目录，输入命令：./redis-server /etc/redis/redis....
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-11-30 09:49:57
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    327
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/109173859" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（7）——Linux单用户模式详解 及应用场景
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录一、单用户模式简介二、进入单用户模式修改密码1、Centos6进入单用户修改密码1、重启系统，进入系统欢迎界面按上下左右键进入GRUB界面；2、在GRUB界面选择内核版本，按下'e'键；3、在此界面可以进行编辑，在最后输入'single'再按回车键返回4、修改密码5、reboot进行系统重启2、Centos7单用户修改密码1、进入GRUB页面，选择相应的内核，按下'e'键；2、进入内核修改信息界面，找到Linux16这一行；3、进入单用户后，重新挂载根目录
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-10-20 08:58:49
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    155
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/109157318" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（8）——Ubuntu安装ssh服务 以及版本查看命令
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  lsb_release -acat /proc/version安装：sudo apt-get install openssh-server启动：sudo service ssh start查询服务启动状态：sudo ps -e | grep ssh 或者 sudo service ssh status配置开机启动：sudo sysv-rc-conf把四项都选上。修改默认端口：sudo vim /etc/ssh/sshd_config找到Por.
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-10-19 14:51:45
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    774
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/108479027" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux故障解决（2）——使用yum安装netcat 及报错问题解决
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录1 使用yum工具进行安装2 解决protocol not available错误3 测试目标服务器 UDP 端口的连通性1 使用yum工具进行安装在Linux终端窗口可以直接使用yum工具进行安装：[root@localhost ~]# yum install nc.x86_64安装完毕后，在终端模式下运行nc -c查看命令是否正常安装OK，安装正常。但有的人可能会遇到：protocol not available这个提示2 解决prot..
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-09-08 22:42:58
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    663
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107953535" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux故障解决（3）——YUM安装任何软件 报错：ERROR: XZ COMPRESSION NOT AVAILABLE
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  使用yum安装任何软件均提示错误YUM错误：ERROR: XZ COMPRESSION NOT AVAILABLE解决方案：[root@centos7 ~]# yum remove epel-release[root@centos7 ~]# rm -rf /var/cache/yum/x86_64/6/epel/[root@centos7 ~]# yum clean all然后执行yum操作：成功~[root@centos7 ~]# yum inst...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-08-12 11:33:28
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    213
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107861747" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（9）——系统状态监控命令top使用详解
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  一个服务器运维管理员，每天早上到公司第一件事 就是端着一杯咖啡连上服务器，输入top命令看着满屏幕系统运行参数状态，一股朕日理万机的感觉油然而生[root@localhost~]#top[参数]参数：-d 秒数：指定 top 命令每隔几秒更新。默认是 3 秒；-b：使用批处理模式输出。一般和&quot;-n&quot;选项合用，用于把 top 命令重定向到文件中；-n 次数：指定 top 命令执行的次数。一般和&quot;-&quot;选项合用；-p 进程PID：仅查看指定 ID 的进程；-s：使 top 命令在安..
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-08-07 14:32:11
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    235
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107689154" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（10）——Centos8 重启网络服务 网络相关命令
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  问题描述：新安装的CentOS8系统由于网络服务命令与之前版本有较大改变，在这里做详细介绍。目录1、修改网卡配置文件：2、重启网络服务3、测试网络1、修改网卡配置文件：[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-ens160 #如下图，将ONBOOT=no改为yes2、重启网络服务nmcli c reload ens160#重启网卡[root@localhost ...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-07-30 14:26:55
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    1661
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107685035" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（11）——linux下jdk的安装及环境变量配置
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录1、将下载好的jdk包通过ssh上传到centos操作系统2、进行解压3、编辑系统环境变量4、执行命令 . /etc/profile5、输入java -version 进行测试1、将下载好的jdk包通过ssh上传到centos操作系统这里是jdk-8u45-linux-x64.tar.gz下载链接：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-07-30 10:58:44
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    106
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107586338" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux故障解决（4）——新安装的CentOS 系统无法上网解决方法 （未知的名称或服务）
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  新安装的Linux系统无法上网：未知的名称或服务。适用于系统CentOS（5/6/7）、Redhat各版本问题原因：由于redhat/centos系列，网卡默认是开机关闭状态，所以我们把网卡改为开机启动即可。解决方法：打开网卡配置文件：vim /etc/sysconfig/network-scripts/ifcfg-ens33将ONBOOT=no，改为yes，保存退出 wq!重启网卡，service network restart问题解决TYPE=Eth.
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-07-25 22:42:13
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    456
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107448389" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统发行版本介绍（一）——CentOS介绍
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  CentOS 介绍CentOS Wiki：https://zh.wikipedia.org/zh/CentOS	CentOS 百科：http://baike.baidu.com/item/centos	CentOS 官网：https://www.centos.org/	CentOS 的自我介绍：https://wiki.centos.org/zh/About	CentOS 官网下载：https://www.centos.org/download/	CentOS 官网下载（含有旧版本）：http
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-08-01 16:20:06
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    258
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    4
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107413515" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux基本操作（6）——Linux 重写rm 命令 实现回收站功能
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  rm -rf 是一个极其危险的操作，而且linux端不像windows，有回收站的后悔药可以吃，所以一旦误操作，就会造成不可挽回的后果。	今天通过shell重写，在linux端实现一个回收站的功能，可以实现将rm -rf 删除的文件指定存放到一个路径下，并定期来清理。创建一个路径来作为我们的回收站：cd ~ &amp;&amp; mkdir .trash	赋予最高权限：chmod 777 .trash	修改你的 home 目录下的：.bashrc： vim ~/.bashrc# rm tr.
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-07-17 17:41:50
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    219
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    2
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/107142215" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux运维问题解决(4)——linux LVM技术 逻辑卷增加 扩容 缩小 删除等操作
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  一、新磁盘卷组创建1. 增加了一个磁盘，然后先用 fdisk -l 查看磁盘是否生效2.使用 fdisk 命令对新盘进行分区3.创建物理卷（PV）pvcreate /dev/sdb1使用 pvcreate 命令创建物理卷，然后查看物理卷信息（pvdisplay）4.创建卷组（VG） vgcreate datavg01 /dev/sdb1使用vgcreate命令创建物理卷，然后查看物理卷信息（vgs）5. 现在可以将PV加入卷组VG中 vge...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2020-07-05 17:51:52
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    215
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/91606840" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux 误删除 /boot分区 的解救办法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  系统安装完之后，boot分区最好做一个备份，因为这个分区 我们基本不会动它，所以备份一次一劳永逸，以防万一。当如果我们不小心 误删除了这个目录，也不用慌，正因为这个分区，我们除了开机 其他时候基本用不到，所以恢复起来还是很容易的。而且恢复之后，我们操作系统里的其他服务基本没有影响，我们看一下，如果误删除了/boot，该如何恢复：由于/boot分区一般就是用于存放镜像和相关启动引...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-06-12 20:10:41
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    2937
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/91038344" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  centos不同版本修改主机名的正确方法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  1 centos6下修改hostname[root@centos6 ~]$ hostname                                           # 查看当前的hostnamemail.ansible.com[root@centos6 ~]$ vim /etc/sysconfig/network                         # 编辑ne...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-06-06 08:57:24
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    3289
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/90287686" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux目录跳转命令汇总
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  cd / 去根目录cd ~ 去当前用户的家目录cd 回当前用户的家目录cd - 回到上一个所处的目录cd .. 回到当前目录的上一级目录
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-05-17 10:02:07
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    2458
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/81159119" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux运维故障排查——SSH连接Fedora不成功的原因
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  首先说下连接Fedora不成功的原因①网络服务没有开启：此时首先关闭 NetWorkManager服务:systemctl stop NetWorkManager然后配置网卡vi /etc/sysconfig/network-scripts/ifc-ethXXX，将BOOTPROTO=dhcp，这样重启时 会自动分配ip重启网络服务:systemctl restart netwo...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2018-07-22 21:37:00
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    2720
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/80598952" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（2）——启动和关闭oracle的相关命令
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  一、Linux下启动Oracle　　Linux下启动Oracle分为两步：　　1）启动监听；　　2）启动数据库实例；1.登录服务器，切换到oracle用户，或者以oracle用户登录[admin@dataserver ~]$ su - oracle密码：[oracle@dataserver ~]$2.打开监听服务[oracle@localhost ~]$ lsnrctl start可以通过l...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2018-06-06 18:04:02
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    6913
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://lexsaints.blog.csdn.net/article/details/80547675" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Linux系统管理（3）——防火墙 iptables基本原理 四表五链 NetFilter 概述
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  Linux防火墙主要就行工作的部分在内核，这个模块叫NetFilter；我们平时配置的iptables是给我们的一个配置界面，我们通过iptables配置规则，配置之后，NetFilter通过这些规则来进行防火墙过滤等操作控制。NetFilter模块：它是主要的工作模块，位于内核中，在网络层的五个位置（也就是防火墙四表五链中的五链）注册了一些钩子函数，用来抓取数据包；把数据包的信息拿出来匹配各个各...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2018-06-02 14:37:21
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountBlack.png" alt="">
+                    10664
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountBlack.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+</ul>
+<div class="blog-footer-bottom" style="margin-top:10px;"></div>
+<script src="https://g.csdnimg.cn/common/csdn-footer/csdn-footer.js" data-isfootertrack="false" type="text/javascript"></script>
+<script type="text/javascript">
+    window.csdn.csdnFooter.options = {
+        el: '.blog-footer-bottom',
+        type: 2
+    }
+</script>    </div>
+</main>
+</div>
+<div class="skin-boxshadow"></div>
+<script type="text/javascript">
+    var currentPage = 1;
+    var baseUrl = 'https://lexsaints.blog.csdn.net/category_10959263'
+    var pageSize = 40;
+    var listTotal = 25;
+    function getAllUrl(page) {
+        if (page > 1) {
+            return baseUrl + "_" + page + ".html";
+        }
+        return baseUrl + ".html";
+    }
+</script>
+<script>window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "1",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "0",
+            "bdSize": "16"
+        }, "share": {}
+    };
+    with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = '//csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $(document).on('click', '.follow_column_button', function () {
+          if (!currentUserName) {
+              window.csdn.loginBox.show();
+              return false;
+          }
+          var url = "https://blog.csdn.net/" + "phoenix/web/v1/subscribe/subscribe";
+          var columnId = "10959263";
+          var info = {columnId: columnId};
+          $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: info,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (data) {
+              if (data.code === 200 && data.data.status) {
+                  $('.column_button').removeClass('follow_column_button').addClass('unfollow_column_button').text('已关注')
+                  var columnNum = parseInt($('.column-subscribe-num').text()) + 1;
+                  $('.column-subscribe-num').text(columnNum)
+              }
+            }
+          })
+        });
+        $(document).on('click', '.unfollow_column_button', function () {
+            var url = "https://blog.csdn.net/" + "phoenix/web/v1/subscribe/un-subscribe";
+            var columnId = "10959263";
+            var info = {columnId: columnId};
+            $.ajax({
+              url: url,
+              type: 'post',
+              dataType: 'json',
+              data: info,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                if (data.code === 200 && data.data.status) {
+                  $('.column_button').removeClass('unfollow_column_button').addClass('follow_column_button').text('关注')
+                  var columnNum = parseInt($('.column-subscribe-num').text()) - 1;
+                  $('.column-subscribe-num').text(columnNum < 0 ? 0 : columnNum)
+                }
+              }
+            })
+        })
+
+        $(document).on('mouseenter mouseleave', '.unfollow_column_button', function (e) {
+            if (e.type === 'mouseenter') {
+                $(this).text('取消关注')
+            } else if (e.type === 'mouseleave') {
+                $(this).text('已关注')
+            }
+        })
+    })
+</script>
+<script type="text/javascript">
+    if (localStorage.getItem("isReload") != null) {
+        window.location.reload();
+        localStorage.removeItem("isReload")
+	  }
+     $(document).on('click','#edit',function(){
+        localStorage.setItem("isReload","true");
+     })
+</script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-cc21cbaf03.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/download/old_static/js/qrcode.js"></script>
+<script src="https://g.csdnimg.cn/user-ordercart/1.0.6/user-ordercart.js"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/column-78261cfea6.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/list-c16171ada3.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/side-toolbar/3.0/side-toolbar.js" type="text/javascript"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/login-box/1.1.4/login-box.js"></script></body>
+</html>

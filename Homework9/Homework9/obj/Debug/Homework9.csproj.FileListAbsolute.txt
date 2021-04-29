@@ -1,0 +1,10 @@
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\bin\Debug\Homework9.exe.config
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\bin\Debug\Homework9.exe
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\bin\Debug\Homework9.pdb
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.Form1.resources
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.Properties.Resources.resources
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.csproj.GenerateResource.cache
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.exe
+\\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.pdb

@@ -1,0 +1,1399 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://blog.csdn.net/weixin_38912070/article/details/116279511"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="report" content='{"pid": "blog", "spm":"1001.2101"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <meta name="applicable-device" content="pc">
+    <link  href="https://g.csdnimg.cn/static/logo/favicon32.ico"  rel="shortcut icon" type="image/x-icon" />
+    <title>闲鱼易用高可扩的文章发布工具建设_闲鱼技术的博客-CSDN博客</title>
+    <script>
+      (function(){ 
+        var el = document.createElement("script"); 
+        el.src = "https://s3a.pstatp.com/toutiao/push.js?1abfa13dfe74d72d41d83c86d240de427e7cac50c51ead53b2e79d40c7952a23ed7716d05b4a0f683a653eab3e214672511de2457e74e99286eb2c33f4428830"; 
+        el.id = "ttzz"; 
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(el, s);
+      })(window)
+    </script>
+        <meta name="keywords" content="闲鱼易用高可扩的文章发布工具建设">
+    <meta name="description" content="背景闲鱼会玩社区是一个以分享个人趣味生活为主的内容社区，在社区的运营过程中，经常有一些文章形式的内容在会玩广场上投放。此前文章创作是在一个主要承载营销搭建的平台上完成的，这种方式首先不是专...">
+    <script src="//g.csdnimg.cn/tingyun/1.8.5/blog.js" type='text/javascript'></script>
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/css/corporate_blog_enter-9682de6c2a.min.css">
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var isCorporate = true;//注释删除enterprise
+        var username =  "weixin_38912070";
+        var skinImg = "white";
+        var blog_address = "https://blog.csdn.net/weixin_38912070";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_38912070/article/details/116279511";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile.csdnimg.cn/8/5/3/3_weixin_38912070";
+        var articleTitle = "闲鱼易用高可扩的文章发布工具建设";
+        var articleDesc = "背景闲鱼会玩社区是一个以分享个人趣味生活为主的内容社区，在社区的运营过程中，经常有一些文章形式的内容在会玩广场上投放。此前文章创作是在一个主要承载营销搭建的平台上完成的，这种方式首先不是专...";
+        var articleTitles = "闲鱼易用高可扩的文章发布工具建设_闲鱼技术的博客-CSDN博客";
+        var nickName = "闲鱼技术";
+        var articleDetailUrl = "https://blog.csdn.net/weixin_38912070/article/details/116279511";
+        if(window.location.host.split('.').length == 3) {
+            blog_address = blogUrl + username;
+        }
+        var skinStatus = 'White';
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+    </script>
+    <script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js" type="text/javascript"></script>
+    <script src='//g.csdnimg.cn/common/csdn-report/report.js' type='text/javascript'></script>
+    <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+    <script src="https://dup.baidustatic.com/js/ds.js"></script>
+</head>
+<body class="nodata company_blog" style="background-color:;">
+        <script>
+            var toolbarSearchExt = '{"landingWord":[],"queryWord":"","tag":["html","js","java","python","大数据"],"title":"闲鱼易用高可扩的文章发布工具建设"}';
+        </script>
+    <script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/pc/css/blog_code-01256533b5.min.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/chart-3456820cac.css" />
+<div class="main_father clearfix d-flex justify-content-center" style="height:100%;"> 
+    <div class="container clearfix" id="mainBox">
+        <main>
+<script type="text/javascript">
+    var blogSensitiveWords = "";
+    function getQueryString(name) {   
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象  
+      var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+      if( r != null ) return decodeURIComponent( r[2] ); return '';   
+    }
+    function stripscript(s){ 
+      var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]") 
+      var rs = ""; 
+      for (var i = 0; i < s.length; i++) { 
+        rs = rs+s.substr(i, 1).replace(pattern, ''); 
+      } 
+      return rs; 
+    }
+    var blogHotWords = stripscript(getQueryString('utm_term')).length > 1 ? stripscript(getQueryString('utm_term')) : ''
+</script>
+<div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <h1 class="title-article" id="articleContentId">闲鱼易用高可扩的文章发布工具建设</h1>
+            </div>
+            <div class="article-info-box">
+                <div class="article-bar-top">
+                    <img class="article-type-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png" alt="">
+                    <div class="bar-content">
+                    <a class="follow-nickName " href="https://blog.csdn.net/weixin_38912070" target="_blank" rel="noopener">闲鱼技术</a>
+                    <span class="time">2021-04-29 12:12:00</span>
+                    <img class="article-read-img article-heard-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png" alt="">
+                    <span class="read-count">30</span>
+                    <a id="blog_detail_zk_collection" class="un-collection" data-report-click='{"mod":"popu_823","spm":"1001.2101.3001.4232","ab":"new"}'>
+                        <img class="article-collect-img article-heard-img un-collect-status isdefault" style="display:inline-block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" alt="">
+                        <img class="article-collect-img article-heard-img collect-status isactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" alt="">
+                        <span class="name">收藏</span>
+                        <span class="get-collection">
+                        </span>
+                    </a>
+                    </div>
+                </div>
+                <div class="blog-tags-box">
+                    <div class="tags-box artic-tag-box">
+                            <span class="label">文章标签：</span>
+                                <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"html","ab":"new"}' class="tag-link" href="https://www.csdn.net/tags/MtTaEg0sMzA4NjQtYmxvZwO0O0OO0O0O.html" target="_blank" rel="noopener">html</a>
+                                <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"js","ab":"new"}' class="tag-link" href="https://www.csdn.net/tags/MtzaIgwsNjI0MDQtYmxvZwO0O0OO0O0O.html" target="_blank" rel="noopener">js</a>
+                                <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"java","ab":"new"}' class="tag-link" href="https://www.csdn.net/tags/NtTaIg5sMzYyLWJsb2cO0O0O.html" target="_blank" rel="noopener">java</a>
+                                <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"python","ab":"new"}' class="tag-link" href="https://www.csdn.net/tags/MtjaQg4sNDk0LWJsb2cO0O0O.html" target="_blank" rel="noopener">python</a>
+                                <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"大数据","ab":"new"}' class="tag-link" href="https://www.csdn.net/tags/MtTaYg5sNzg2NS1ibG9n.html" target="_blank" rel="noopener">大数据</a>
+                    </div>
+                </div>
+                <div class="slide-content-box">
+                    <div class="article-copyright">
+                        <div class="creativecommons">
+                            版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。
+                        </div>
+                        <div class="article-source-link">
+                            本文链接：<a href="https://blog.csdn.net/weixin_38912070/article/details/116279511" target="_blank">https://blog.csdn.net/weixin_38912070/article/details/116279511</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="operating">
+                    <a class="href-article-edit slide-toggle">版权</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="csdn-shop-window-top" class="csdn-shop-window-common" style="margin-top:18px;padding:0"></div>
+    <article class="baidu_pl">
+        <div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-b5506197d8.css">
+                <div id="content_views" class="htmledit_views">
+                    <div id="js_content"> 
+ <h2><strong>背景</strong></h2>
+ <p style="text-align: left">闲鱼会玩社区是一个以分享个人趣味生活为主的内容社区&#xff0c;在社区的运营过程中&#xff0c;经常有一些文章形式的内容在会玩广场上投放。此前文章创作是在一个主要承载营销搭建的平台上完成的&#xff0c;这种方式首先不是专门为文章场景服务的&#xff0c;导致搭建出来的页面是一个静态页面&#xff0c;数据无法被理解&#xff0c;也无法进入审核和分发链路。而且搭建工具无法对外使用&#xff0c;从而无法让外部的创作者参与文章创作。因此&#xff0c;我们想从零开始开发一个能快速发布且高可扩展文章结构形式的发布工具。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/0d1b1456d78dce85901468f5b6e102d5.png" title="null" /></p>
+ <h2><strong>调研</strong></h2>
+ <p style="text-align: left">业界也有许多同类型的产品&#xff0c;如常见的知乎、掘金、微信公众号等。微信公众号的文章无论从发布体验、消费体验以及内容结构扩展上都做得很好。我们总结微信公众号文章有以下几个特点&#xff1a;</p>
+ <p style="text-align: left">1.文章内容形式丰富度高&#xff1b;</p>
+ <p style="text-align: left">2.浏览体验极好&#xff1b;</p>
+ <p style="text-align: left">3.支持第三方内容模版&#xff1b;</p>
+ <p style="text-align: left">闲鱼会玩文章希望能在内容形式&#xff0c;浏览体验上尽可能对齐微信公众号文章的标准。但闲鱼会玩文章与微信公众号也有一定的区别&#xff0c;微信公众号面向不同的自媒体&#xff0c;不同垂类的自媒体对文章的展示调性是不同的&#xff0c;因此对文章的内容样式不会做太多限制&#xff0c;而闲鱼的社区有着自己的调性以及自己的品牌主题色&#xff0c;内容形式会更加收敛。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/e08f69a07b07d739a1e177ffbfad58fa.png" title="null" /></p>
+ <h2><strong>目标</strong></h2>
+ <p style="text-align: left">文章内容结构自由度高&#xff0c;内容排列可以是标题、文字段落、图片以及交互组件&#xff08;如投票器、链接卡片等&#xff09;的排列组合&#xff0c;因此高可扩展性非常重要。此外&#xff0c;发布器作为文章创作入口&#xff0c;需要存储创作者全部内容信息&#xff0c;包括字体、字号、颜色、段落、图片等。还有展示页在端上的性能体验也是非常重要的指标。因此我们定了以下几个系统的关键目标&#xff1a;</p>
+ <p style="text-align: left">1.信息还原度百分之百</p>
+ <p style="text-align: left">2.内容结构可扩展</p>
+ <p style="text-align: left">3.展示页秒开体验</p>
+ <p style="text-align: left">文章发布链路大致流程如下所示&#xff1a;</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/94e2d5188ba13ebab4a90fca1d4260b2.png" title="null" /></p>
+ <h2><strong>方案</strong></h2>
+ <p style="text-align: left">围绕既定的设计目标&#xff0c;如何实现呢&#xff1f;我们的方案是根据一套约定的schema协议来表达文章内容的所有信息&#xff0c;协议记录和表达所有需要在客户端还原展示的信息&#xff0c;最后通过这套协议把发布器和展示页连接起来。可以看出&#xff0c;设计一套通用、简洁的文章内容协议是方案的关键。文章发布器负责产生schema&#xff0c;结构化存储后&#xff0c;文章展示页获取到该schema然后在端上解析协议并展示出对应的内容信息。方案大图如下所示&#xff0c;标橘黄色表示协议相关的部分&#xff0c;它出现在了几乎整个链路中。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/a4fce64fbcd664d95e13dc14625b0ab3.png" title="null" /></p>
+ <h3><strong>协议设计</strong></h3>
+ <p style="text-align: left">梳理出协议设计目标如下&#xff1a;</p>
+ <p style="text-align: left">1.规则简洁易懂。规则越简单&#xff0c;则根据协议创建schema数据以及解析schema数据就越容易。</p>
+ <p style="text-align: left">2.可扩展。未来的文章形式可以是非常丰富的&#xff0c;要求用这套协议表达任意的内容形式。</p>
+ <p style="text-align: left">3.结构化存储。将图文内容可以进行结构化抽取和存储&#xff0c;文章内容的schema可能非常大&#xff0c;而数据库存储字段一般会有字符上限&#xff0c;需要压缩schema。此外文章的实体内容需要进入安全审核链路&#xff0c;这也要求我们必须进行内容结构化抽取。</p>
+ <p style="text-align: left">围绕着以上三个诉求&#xff0c;我们我们基于钉钉的富文本协议&#xff0c;定制了一套符合要求的协议规则。</p>
+ <h3><strong>协议逻辑</strong></h3>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/fa38be88e8c1be10b38dbab603d5788e.png" title="null" /></p>
+ <h3><strong>现有元素标签</strong></h3>
+ <p style="text-align: left">•root - 根元素</p>
+ <p style="text-align: left">•p - 正文标签</p>
+ <p style="text-align: left">•span - 文字标签</p>
+ <p style="text-align: left">•img - 图片标签</p>
+ <p style="text-align: left">•h2 - 二级段落标签</p>
+ <p style="text-align: left">•card - 卡片标签</p>
+ <p style="text-align: left">•idleVideoCard - 视频卡片</p>
+ <h3><strong>现有属性</strong></h3>
+ <p style="text-align: left">1.常规属性</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/37be9849ca088757e235e019dc930edc.png" title="null" /></p>
+ <p style="text-align: left">2.图片属性</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/9e6b8717344d13f01cd23fbf89a4be3d.png" title="null" /></p>
+ <p style="text-align: left">3.视频属性</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/93210850bc622a6415af2eff80f83d10.png" title="null" /></p>
+ <h3><strong>如何扩展</strong></h3>
+ <p style="text-align: left">我们规定未来所有新增的插件&#xff0c;都作为一种子类的卡片&#xff0c;可以自定义卡片类型&#xff0c;卡片数据统一放到metadata字段中&#xff0c;然后端上根据卡片类型做对应的组件&#xff0c;并将metadata中的卡片数据信息作为参数导入组件中去&#xff0c;从而做到未来任意插件&#xff0c;都能映射到协议里。</p>
+ <h3><strong>结构化存储</strong></h3>
+ <p style="text-align: left">协议是一种json schema&#xff0c;这种在关系型数据库中存储是一个比较头疼的问题。图文内容存储会将内容分成三个字段&#xff0c;分别是文本、图片数组和自定义扩展字段。文本和图片的结构化信息会用于安全审核以及算法推荐识别&#xff0c;自定义字段用来存储业务上的其他信息。我们的第一版方案是将文本和图片内容提取出来单独存储&#xff0c;并将整个json字符串全部放到自定义字段中&#xff0c;这样只需要一存一读就可以了。然而&#xff0c;真实场景中&#xff0c;自定义字段有字符数限制。因此需要对json字符串进行一定的转译和压缩&#xff0c;只保留必要的样式和排版信息即可。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/fb77e67e33ac766bc5497598f2955894.png" title="null" /></p>
+ <h3><strong>发布器</strong></h3>
+ <p style="text-align: left">发布器的核心是一个富文本编辑器&#xff0c;市场上主流的react编辑器有开源的slate.js、facebook的draft.js&#xff0c;阿里内部比较成熟的富文本工具有语雀富文本编辑器和钉钉文档团队的we-editor。从协议的复杂度和可扩展性上考虑&#xff0c;我们选型了钉钉的we-editor。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/5b588e1a5126b2d9fab6836a47feab22.png" title="null" /></p>
+ <p style="text-align: left">富文本编辑器的使用上&#xff0c;除了要处理在编辑器上手写文章场景外&#xff0c;从外部粘贴内容进编辑器的场景复杂度会更高。因为内容本身就带有富文本样式&#xff0c;从而导致文章样式不可控&#xff0c;生成的富文本协议内容混乱,不利于结构化审核和端上展示页渲染。</p>
+ <h3><strong>粘贴场景处理</strong></h3>
+ <p style="text-align: left">粘贴进来的内容是带上内联样式属性的标签&#xff0c;如div、span、a、h1、h2、img、video等。我们的做法是&#xff0c;在粘贴的时候&#xff0c;将所有的内联样式清除&#xff0c;并只处理格式范围内的标签。对于img、video标签&#xff0c;则需要更多的处理&#xff0c;因为img和video的src是一个地址链接&#xff0c;这些链接如果是站外连接&#xff0c;就会存在访问跨域&#xff0c;同时对平台来说也存在安全风险。做法是对站外资源做转存处理&#xff0c;即将站外链接下载后通过内部服务将资源转存到可靠的资源服务器上。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/a4966da27f482e7be8d3f9f4d0704aea.png" title="null" /></p>
+ <p style="text-align: left"><strong>插件扩展</strong><br /></p>
+ <h3>插件扩展通过定制编辑器插件来完成。我们只保留了基础的redo/undo、字体加粗、字体对齐、添加图片等编辑器自带能力&#xff0c;其他如视频、连接能力通过自定义插件完成。通过对we-editor插件体系封装&#xff0c;开发者可以像开发react组件一样开发插件。封装过程是将扩展插件都当作一种卡片&#xff0c;在schema里指定工具栏内容&#xff0c;对应点击事件&#xff0c;以及插入富文本的卡片样式等&#xff0c;即可插入任意插件。以一个插入视频的插件为例&#xff1a;</h3>
+ <p style="text-align: left"><img src="https://img-blog.csdnimg.cn/img_convert/50925c7b3e536c7563efaef32e950465.png" title="null" /></p>
+ <p style="text-align: left">点击该插件工具栏按钮的时候&#xff0c;选择插入idleVideoCard类型的卡片即可。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/28b6311c1fe48567ac42ed0eef096764.png" title="null" /><img src="https://img-blog.csdnimg.cn/img_convert/54040c145cb4f138ebdfeff939a71c7b.png" title="null" /></p>
+ <h3><strong>函数服务层</strong></h3>
+ <p style="text-align: left">在发布器的发布链路中&#xff0c;我们设计了一层faas函数服务层。主要考虑以下几个原因。</p>
+ <p style="text-align: left">1.安全问题。结构化信息抽取算法应该放到服务端计算&#xff0c;否则会存在刷接口绕过安审链路的漏洞。</p>
+ <p style="text-align: left">2.抽取和还原都通过js实现。从而保证一套规则技术栈统一。</p>
+ <p style="text-align: left">下图为大致的数据流转示意图&#xff1a;</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/d8bcbbc0ddc49556a4b72db31884d513.png" title="null" /></p>
+ <h3><strong>文章展示</strong></h3>
+ <p style="text-align: left">文章展示的原理是通过协议规则将经过处理的schema还原成真正的schema信息&#xff0c;并解析信息转化成对应的可视化组件。我将重点讲协议解析和性能优化。</p>
+ <h3><strong>协议解析</strong></h3>
+ <p style="text-align: left">理论上只要能正确解析出富文本schema协议表达的富文本信息&#xff0c;在端上可以还原成任意对应的设计规范&#xff0c;这也是未来我们可以做集团统一文章发布工具的基础。即只要保证协议一致&#xff0c;端上的展示可以大不相同。还原函数伪代码如下所示&#xff1a;</p>
+ <p style="text-align: left"><strong><img src="https://img-blog.csdnimg.cn/img_convert/b9a611694a8d96762f5412368d2f30ed.png" /></strong></p>
+ <p style="text-align: left"><strong>体验优化</strong></p>
+ <p style="text-align: left">前端的性能性能优化话题是一个老生常谈的话题&#xff0c;限于篇幅有限&#xff0c;这里只讲这次在文章详情页的几个主要优化方案。性能数据结果上&#xff0c;跨端首屏渲染时间从1700ms优化到1000ms左右&#xff0c;做到了秒开。先上优化前后效果对比&#xff1a;</p>
+ <p style="text-align: center"><img src="https://img-blog.csdnimg.cn/img_convert/d06dcd661afc0091ce9b85918bd377e2.gif" title="null" /></p>
+ <p style="text-align: left">在讲具体方案前&#xff0c;我们先来看一下一个h5页面在webview里是加载流程&#xff1a;</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/18f1731f326ad30fd156d6a593783099.png" title="null" /></p>
+ <p style="text-align: left">在这个链路中&#xff0c;最消耗时间的是各种资源的IO&#xff0c;包括页面文档的IO&#xff0c;样式文件、js文件和图片的IO以及数据接口请求的IO。其次耗时的是webview的启动耗时。因此我们的优化主要围绕减少IO以及提前IO的思路去进行。</p>
+ <ol><li><p style="text-align: left">资源combo</p><p style="text-align: left">页面加载中除了包含业务的js文件之外&#xff0c;还包含jstracker的资源&#xff0c;rax的框架资源&#xff0c;安全相关的js等&#xff0c;将这些资源合并成一个资源请求&#xff0c;则可以减少很多次请求IO&#xff0c;从而降低首屏渲染时间。</p></li><li><p style="text-align: left">图片懒加载</p><p style="text-align: left">文章中一般会有很多图片&#xff0c;这些图片大部分不会在第一屏中就出现&#xff0c;因此可以将未出现在屏幕中的图片先不加载&#xff0c;等用户下滑至该图片出现在屏幕中时&#xff0c;才请求该图片资源。</p></li><li><p style="text-align: left">本地资源缓存</p><p style="text-align: left">文档资源下载以及js资源一般来说是一个长时间不变的东西&#xff0c;如果这些资源提前在客户端空闲的时候就已经下载好&#xff0c;等到请求这些资源的时候&#xff0c;客户端发现本地已经有了同名的资源&#xff0c;就拦截这次资源请求&#xff0c;返回本地缓存好的资源&#xff0c;则可以大大降低首屏渲染时间。</p></li><li><p style="text-align: left">数据预取</p><p style="text-align: left">首屏渲染的时间长短有一部分取决于第一次调用的接口的返回速度&#xff0c;而接口请求一般要等到js逻辑触发接口请求时才发出。如果首屏需要获取的请求是一个确定的参数&#xff0c;那么是否可以将请求接口这个时机提前呢&#xff1f;我们数据预取的方案就是在用户点开页面的请求URL中就带上首屏需要请求的接口参数&#xff0c;然后客户端获取到这个参数后异步地请求这个数据&#xff0c;将结果缓存到客户端上。等到js逻辑需要发出请求的时候&#xff0c;判断当前请求是否已经被请求过&#xff0c;若请求过&#xff0c;则直接返回缓存在客户端上的接口数据。</p></li><li><p style="text-align: left">去掉客户端loading</p><p style="text-align: left">客户端loading本来是webview自带的能力&#xff0c;表示当前页面还有资源在加载&#xff0c;但其实虽然有资源在加载&#xff0c;但首屏的页面信息其实已经加载出来的。去掉客户端的loading&#xff0c;可以给用户带来更快的体感&#xff0c;虽然实际上并没有加快这个流过程。优化后的加载流程如下图所示&#xff1a;</p></li></ol>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/fbc557470cda551cce9f6c00fa6181f8.png" title="null" /></p>
+ <p style="text-align: left">性能优化无止尽&#xff0c;因此文章展示页的优化也会一直做下去&#xff0c;可以考虑提前启动webview容器&#xff0c;ESR、NSR等方式优化。</p>
+ <h2><strong>展望</strong></h2>
+ <p style="text-align: left">到目前为止已经完成了文章发布工具从0到1的建设&#xff0c;未来需要做的事情还有很多。基于这套高可扩展的协议&#xff0c;可以扩展出更多更丰富的文章内容形式以及交互玩法&#xff0c;如投票器、弹幕、文章模版等&#xff0c;最终可以沉淀出一套可开放的基于当前协议的模版插件开发体系&#xff0c;以适应不同的文章内容体系。此外&#xff0c;性能体验优化会继续以高标准的要求不断进行优化。 </p>
+ <p style="text-align: left">再往上层看&#xff0c;文章内容只是会玩社区内容的其中一种承载形式&#xff0c;我们希望有一个包含更多创作能力的创作者站点工具。pc侧的创作者中心和手机端上的创作者发布中心呈一个互补的态势。普通的创作者更倾向于即来即发&#xff0c;随手发&#xff0c;随时发&#xff0c;而对内容质量有更高追求的一些pgc创作者则更关注内容质量&#xff0c;发布效率&#xff0c;内容消费数据等比较专业的指标。 </p>
+ <p style="text-align: left">因此在完成了基本的发布能力后&#xff0c;我们会逐渐完善整个创作者发布链路&#xff0c;集普通图文创作、视频内容创作、文章创作、内容管理、数据中心、热点内容发现于一体的完整专业创作者发布工具。</p>
+ <p><img src="https://img-blog.csdnimg.cn/img_convert/cbdce6259ba4f14a940724ccb6cf5cbb.png" /></p> 
+</div>
+                </div>
+        </div>
+    </article>
+</div>
+            <div id="csdn-shop-window" class="csdn-shop-window-common"></div>
+<div class="more-toolbox" id="toolBarBox">
+    <span id="fixedBar"></span>
+    <div class="left-toolbox">
+        <ul class="toolbox-list">
+            <li class="tool-item tool-item-size tool-active is-like" id="is-like"><a>
+            <img style="display:none;" id="is-like-imgactive-animation-like" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" alt="">
+            <img class="isactive" style="display:none" id="is-like-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" alt="">
+            <img class="isdefault" style="display:block" id="is-like-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUp.png" alt="">   
+            <span class="name" id="is-like-span">点赞</span>
+            <span id="spanCount" class="count">
+            </span>
+            </a></li>
+            <li class="tool-item tool-item-size tool-active tool-item-comment">
+                <a href="#commentBox">
+                    <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarComment.png" alt="">
+                    <img class="isactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCommentactive.png" style="display:none;" alt="">
+                    <span class="name">评论</span>
+                    <span class="count">
+                    </span>
+                </a>
+            </li>
+            <li class="tool-item tool-item-size tool-active tool-QRcode" id="tool-share">
+                <a href="javascript:;" data-report-click='{"mod":"1582594662_002","spm":"1001.2101.3001.4129","ab":"new"}'>
+                    <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarShare.png" alt="">
+                    <img class="isactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarShareactive.png" style="display:none;" alt="">
+                    <span class="name">分享</span>
+                </a>
+                <div class="QRcode" id="tool-QRcode" style="left:-92%;">
+                    <span id="QRcode-close">x</span>
+                    <p class="title">
+                    海报分享
+                    </p>
+                    <div id='shareCode'></div>
+                    <p>
+                    扫一扫，分享海报
+                    </p>
+                </div>
+            </li>
+            <li class="tool-item tool-item-size tool-active is-collection ">
+                <a href="javascript:;" data-report-click='{"mod":"popu_824","spm":"1001.2101.3001.4130","ab":"new"}'>
+                    <img style="display:none" id="is-collection-img-collection" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" alt="">
+                    <img class="isdefault" id="is-collection-img" style="display:block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" alt="">
+                    <img class="isactive" id="is-collection-imgactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" alt="">
+                    <span class="name" id="is-collection">收藏</span>
+                    <span class="count get-collection" id="get-collection">
+                    </span>
+                </a>
+            </li>
+            <li class="tool-item tool-item-size tool-active tool-more">
+              <a class="article-report">
+                <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarReport.png" alt="">
+                <img class="isactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarReportactive.png" style="display:none;" alt="">
+                <span class="name">举报</span>
+              </a>
+            </li>
+            <li class="tool-item">
+                    <a class="tool-attend tool-bt-button tool-bt-attend" href="javascript:;" data-report-view='{"mod":"1592215036_002","spm":"1001.2101.3001.4232","extend1":"关注"}'>关注</a>
+                <a class="tool-item-follow active-animation" style="display:none;">关注</a>
+            </li>
+            <li class="tool-item">
+                    <p class="company active" id="health-companies" href="javascript:;" >一键三连</p>
+            </li>
+        </ul>
+        <div style="display:flex" class="right-toolbox">
+         </div>
+         <div class="hot-word-tip-box">
+          <span class="hot-word-text">已标记关键词</span>
+          <span class="hot-word-count"></span> 
+          <span class="hot-word-bar"></span>
+          <span class="hot-word-clear">清除标记</span>
+        </div>
+    </div>  
+</div>
+<script type=text/javascript crossorigin src="https://csdnimg.cn/release/phoenix/production/qrcode-7c90a92189.min.js"></script>
+<script src="//g.csdnimg.cn/??sharewx/1.2.1/sharewx.js" type="text/javascript"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/collection-box/2.0.3/collection-box.js"></script>
+                <div id="dmp_ad_58" style="width:100%;overflow-x:hidden"><div id="kp_box_58" data-pid="58"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-gi-21+3s-18+2p"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="5869798804"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=58&a=3778&c=0&k=&spm=1001.2101.3001.5002&d=1&t=3&u=59ab16337b814e85bf04d7e3dfd9364d" style="display: block;width: 0px;height: 0px;"></div></div>
+<a id="commentBox" name="commentBox"></a>
+<div class="comment-box">
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" >
+				<img class="show_loginbox" src="https://g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<img class="comment-sofa-flag" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentFlag@2x.png">
+      <textarea class="comment-content" name="comment_content" id="comment_content" placeholder="优质评论可以帮助作者获得更高权重" maxlength="1000"></textarea>
+			<div class="comment-emoticon"><img class="comment-emoticon-img" data-url="https://csdnimg.cn/release/blogv2/dist/pc/img/" src="https://csdnimg.cn/release/blogv2/dist/pc/img/emoticon.png" alt="表情包"></div> 
+      <span class="comment-emoticon-tip">插入表情</span>
+      <div class="comment-emoticon-box">
+        <div class="comment-emoticon-img-box">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:001.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/001.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:002.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/002.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:003.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/003.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:004.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/004.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:005.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/005.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:006.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/006.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:007.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/007.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:008.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/008.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:009.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/009.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:010.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/010.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:011.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/011.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:012.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/012.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:013.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/013.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:014.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/014.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:015.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/015.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:016.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/016.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:017.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/017.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:018.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/018.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:019.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/019.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:020.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/020.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:021.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/021.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:022.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/022.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:023.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/023.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:024.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/024.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:025.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/025.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:026.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/026.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:027.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/027.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:028.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/028.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:029.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/029.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:030.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/030.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:031.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/031.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:032.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/032.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:033.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/033.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:034.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/034.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:035.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/035.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:036.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/036.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:037.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/037.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:038.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/038.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:039.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/039.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:040.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/040.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:041.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/041.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:042.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/042.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:043.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/043.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:044.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/044.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:045.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/045.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:046.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/046.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:047.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/047.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:048.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/048.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:049.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/049.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:050.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/050.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:051.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/051.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:052.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/052.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:053.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/053.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:054.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/054.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:055.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/055.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:056.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/056.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:057.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/057.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:058.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/058.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:059.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/059.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:060.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/060.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:061.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/061.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:062.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/062.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:063.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/063.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:064.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/064.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:065.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/065.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:066.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/066.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:067.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/067.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:068.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/068.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:069.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/069.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:070.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/070.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:071.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/071.png">
+            <img class="emoticon-monkey-img" data-emoticon="[face]emoji:072.png[/face]" src="https://g.csdnimg.cn/static/face/emoji/072.png">
+        </div>
+      </div>
+      <div class="opt-box">
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="116279511">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">
+						<div class="txt-selected text-truncate">添加代码片</div>
+						<svg class="icon d-block" width="200px" height="100.00px" viewBox="0 0 2048 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path  d="M597.33333292 298.666667h853.333334L1023.99999992 725.333333 597.33333292 298.666667z"  /></svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>
+				<div class="right-box" id="rightBox" data-type="2">
+							<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+							<a data-report-click='{"mod":"1582594662_003","spm":"1001.2101.3001.4227","ab":"new"}'><input type="submit"
+									class="btn btn-sm btn-comment" value="发表评论"></a>
+				</div>
+			</div>
+		</form>
+		<input type="button" class="bt-comment-show" value="评论">
+	</div>
+	<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>            <div class="recommend-tit-mod">相关推荐</div>
+            <div class="recommend-box insert-baidu-box">
+                <div class="recommend-item-box clearfix" style="display:none"></div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/116077305" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/116077305" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					近期好书推荐（内有新书预告）
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">04-23</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1412
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/116077305" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">又到了一年一度的读书日，谈起读书的意义，如果想通过读书成为某个人是不可能的，三观与家庭教育、社会经历、朋友圈层、经济条件太多元素存在相关性，读书甚至不是决定性要素。有些书看了可以防范世界的...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/116035967" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/116035967" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼商品选投实时性优化
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">04-22</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					4515
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/116035967" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">马赫是闲鱼的选品和投放系统，闲鱼业务中多数商品都是孤品即单库存商品，所以商品的实时变更需要即刻反馈到选品和投放链路中，为了满足业务诉求马赫设计之初就把实时性作为最重要的技术目标，随着系统的...</div>
+			</a>
+		</div>
+	</div>
+</div>
+		<dl id="recommend-item-box-tow" class="recommend-item-box type_blog clearfix">
+		</dl>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/115986478" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/115986478" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼如何0到1搭建一套发布引导链路
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">04-21</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1052
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/115986478" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景随着闲鱼持续不断的需求迭代和业务迅速的发展，如何进一步提升用户的使用、留存和活跃的转化，进而带动整体二手交易市场的增长是核心命题。经闲鱼内部数据分析我们发现，用户的商品发布数与成交量呈...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/115683237" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/115683237" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					聊聊FlutterEngage大会中的特性落地
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">04-13</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					783
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/115683237" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">flutter engage大会已经过去一段时间，闲鱼团队作为国内较早大规模使用flutter的团队，对flutter的每一次升级都感到兴奋无比，网上已经有很多介绍大会的flutte 2特...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/115534969" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/115534969" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					低成本可复用前端框架&mdash;&mdash;Linke
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">04-08</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					2076
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/115534969" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">业务背景目前团队内的开发模式多是面向组件的，UI层和逻辑层均强耦合在一起，由于业务的差异性，往往很难完全复用。闲鱼前端业务处在高速发展不断尝试的阶段，如何能更快更稳定地完成需求，更好的支撑...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/115364628" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/115364628" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					Flutter Boost3.0初探
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-31</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					3410
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/115364628" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景随着Flutter的发展，国内越来越多的App开始使用Flutter。为了降低风险，大部分App采用渐进式方式引入Flutter，在App里选几个页面用Flutter来编写，但都碰到了...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/115258077" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/115258077" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					如何实现日常业务问题的一键排查？
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-26</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					976
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/115258077" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景在日常的开发中，我们会收到来自用户，合作伙伴，客服，运营，产品和测试的各种各样的问题反馈，问题咨询，单点问题排查等，这些问题在经过若干人转交后，大部分最终会由开发同学处理。而开发同学解...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/115153024" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/115153024" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼社区如何快准稳的完成无缝数据迁移
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-23</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					2889
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/115153024" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景在内容社区中，内容标签用来辅助说明内容，内容标签对内容分发和理解具有重要作用，能够帮助内容社区将对的内容分发到对的人。目前闲鱼会玩社区的标签分为分类和属性标签两种，两种标签的用法不同，...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114985343" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114985343" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼如何高效打造一个多业务、低侵入的搜索链路
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-18</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					3777
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114985343" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">问题及现状闲鱼搜索很多场景基于集团搜索中台能力，纵观闲鱼搜索链路，存在多角色（工程、算法工程、算法等）、多业务（闲鱼无忧购、租房、帖子等）、多节点（离线数据源聚合、在线召回、URF Ran...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114909057" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114909057" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					一套Flutter混排瀑布流解决方案
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-16</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					3822
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114909057" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景流式布局，这是一种当前无论是前端，还是Native都比较流行的一种页面布局。特别是对于商品这样的Feeds流，无论是淘宝，京东，美团，还是闲鱼。都基本上以多列瀑布流进行呈现，容器列数固...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114826427" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114826427" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					校招开始，你做好【终身成长】的准备了吗？
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-15</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					3285
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114826427" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">一年一度的校招季又要来临了，我们怎样更好的理解招聘背后的人才要求，以及未来要怎么选择。应届加入阿里9年的师兄整理了以下内容分享给大家，希望能以阿里的校招为例，更好的帮助大家理解大公司背后的...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114696337" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114696337" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					Flutter Worker &mdash;&mdash; 闲鱼这样实现&ldquo;逻辑跨平台&rdquo;
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-11</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					3277
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114696337" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">闲鱼社区主要页面采用Native实现，部分使用Flutter和Weex承接。帖子、话题等固定数据结构的处理，点赞、评论等用户交互和状态同步，这些数据逻辑大部分是重复的，而且在多技术栈实现性...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114609709" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114609709" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼如何建设技术舆情治理体系                            （多图多代码）
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-09</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					4094
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114609709" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">现状和问题闲鱼的舆情治理，依托阿里集团的设施建设，具备以下能力：崩溃异常、性能在线聚合查询；本地日志：TLog；在线日志：埋点日志（t+1）和用户行为日志（路径和请求）但在应对舆情治理方面...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114381280" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114381280" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					前端DEF部署和BUC接入的&ldquo;跨域&rdquo;坑
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-04</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					4570
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114381280" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景第一次尝试react框架，在本地调试前端npm start，调用后端接口采用设置host 127.0.0.1 local-fishci2.alibaba.net，前端代码配置如下可完美...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114312998" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114312998" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					鬼才｜闲鱼PMO的年终总结
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">03-03</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					4558
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114312998" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">今年贯穿我的年度关键词是成长，上半年打方向盘，接下来油门踩到底。2020的春夏秋冬，对于世界来说有疫情的反复，在每日滚动的新冠肺炎确诊数字间溜走；还有格局的演变，光怪陆离的奇人异事和不负...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114274988" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114274988" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼UI快速变形利器--擎天柱
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">02-26</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					826
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114274988" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景一个闲鱼商品feeds卡片除了商品主图、标题、商品价格、用户头像等基础元素外，其他位置以标签形式展示商品的特性、利益点。通过标签样式的组合与改变可以影响商品点击率和动销率，闲鱼在众多的...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/114006047" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/114006047" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					学会这招，你也可以让商品定价准确率提升50%
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">02-23</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					993
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/114006047" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景闲鱼是国内最大的闲置二手交易社区，有着数以亿计的商品。其中，商品定价决定了一件商品是否能快速地卖出。然而，闲鱼的大部分卖家都是个人卖家，他们通常缺乏相关的知识，因此需要商品定价指导来帮...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/113764717" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/113764717" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼如何一招保证推荐流稳如泰山
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">02-08</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					8394
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/113764717" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景近几年互联网的快速发展中，互联网业务发展越来越复杂，业务也被拆分得越来越细，阿里内部业务也发生着翻天覆地的变化，从最初的单体应用，到后面的分布式集群，再到最近几年大中台小前台的业务形态...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/113696093" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/113696093" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					到达率99.9%：闲鱼消息在高速上换引擎（集大成）
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">02-05</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					7601
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/113696093" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景在2020年年初的时候接手了闲鱼的消息，当时的消息存在一些反馈：&ldquo;闲鱼消息丢失&rdquo;、&ldquo;消息用户头像乱了&rdquo;、&ldquo;订单状态不对&rdquo;。闲鱼消息的稳定性是个亟待解决的问题，我们调研了集团的一些解决方...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_38912070/article/details/113577758" >
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/113577758" class="tit ellipsis-online ellipsis-online-1" target="_blank"  >
+					闲鱼源码页面SSR最佳实践
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block time">02-02</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					6039
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_38912070/article/details/113577758" target="_blank"  >
+				<div class="desc ellipsis-online ellipsis-online-1">背景「让每一个用户在最短的时间内看到页面上重要的内容」一直以来都是前端工程师们精益求精的方向。对于一个H5的源码页面，我们已经有了很多缩短首屏渲染时间的方法，比如数据预取，离线缓存。但在...</div>
+			</a>
+		</div>
+	</div>
+</div>
+            </div>
+<div class="blog-footer-bottom" style="margin-top:10px;"></div>
+<script src="https://g.csdnimg.cn/common/csdn-footer/csdn-footer.js" data-isfootertrack="false" type="text/javascript"></script>
+<script type="text/javascript">
+    window.csdn.csdnFooter.options = {
+        el: '.blog-footer-bottom',
+        type: 2
+    }
+</script>        </main>
+<aside class="blog_container_aside">
+	<div id="asideProfile" class="aside-box">
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/weixin_38912070" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4121","dest":"https://blog.csdn.net/weixin_38912070","ab":"new"}'>
+                <img src="https://profile.csdnimg.cn/8/5/3/3_weixin_38912070" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div class="profile-intro-name-boxTop">
+                <a href="https://blog.csdn.net/weixin_38912070" class="" id="uid" title="闲鱼技术" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4122","dest":"https://blog.csdn.net/weixin_38912070","ab":"new"}'>
+                    <span class="name " username="weixin_38912070">闲鱼技术</span>
+                </a>
+                <span>
+                </span>
+                <span class="flag expert-blog">
+                <span class="bubble">CSDN认证博客专家</span>
+                </span>
+                <span class="flag company-blog">
+                <img class="identity" src="https://csdnimg.cn/release/blogv2/dist/mobile/img/enterpriseNew.png"/>
+                <span class="bubble">CSDN认证企业博客</span>
+                </span>
+            </div>
+            <div class="profile-intro-name-boxFooter">
+            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="249">
+            <a href="https://blog.csdn.net/weixin_38912070" data-report-click='{"mod":"1598321000_001","spm":"1001.2101.3001.4310"}' data-report-query="t=1">  
+                <dt><span class="count">249</span></dt>
+                <dd class="font">原创</dd>
+            </a>
+        </dl>
+        <dl class="text-center" data-report-click='{"mod":"1598321000_002","spm":"1001.2101.3001.4311"}' title="5425">
+            <a href="https://blog.csdn.net/rank/list/weekly" target="_blank">
+                <dt><span class="count">5425</span></dt>
+                <dd class="font">周排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" title="18022">
+            <a href="https://blog.csdn.net/rank/list/total" data-report-click='{"mod":"1598321000_003","spm":"1001.2101.3001.4312"}' target="_blank">
+                <dt><span class="count">1万+</span></dt>
+                <dd class="font">总排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" style="min-width:58px" title="510437">  
+            <dt><span class="count">51万+</span></dt>
+            <dd>访问</dd>
+        </dl>
+        <dl class="text-center" title="5级,点击查看等级说明">
+            <dt><a href="https://blog.csdn.net/blogdevteam/article/details/103478461" target="_blank">
+                <img class="level" src="https://csdnimg.cn/identity/blog5.png">
+            </a>
+            </dt>
+            <dd>等级</dd>
+        </dl>
+    </div>
+    <div class="item-rank"></div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="4289">
+            <dt><span class="count">4289</span></dt>
+            <dd>积分</dd>
+        </dl>
+         <dl class="text-center" id="fanBox" title="771">
+            <dt><span class="count" id="fan">771</span></dt>
+            <dd>粉丝</dd>
+        </dl>
+        <dl class="text-center" title="228">
+            <dt><span class="count">228</span></dt>
+            <dd>获赞</dd>
+        </dl>
+        <dl class="text-center" title="187">
+            <dt><span class="count">187</span></dt>
+            <dd>评论</dd>
+        </dl>
+        <dl class="text-center" title="424">
+            <dt><span class="count">424</span></dt>
+            <dd>收藏</dd>
+        </dl>
+    </div>
+    <div class="aside-box-footer" data-report-view='{"spm":"3001.4296"}'>
+        <div class="badge-box d-flex">
+            <div class="badge d-flex">
+                <div class="icon-badge" title="持之以恒">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/chizhiyiheng@240.png" alt="持之以恒">
+                    </div>
+                </div>
+                <div class="icon-badge" title="勤写标兵Lv2">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qixiebiaobing2@240.png" alt="勤写标兵Lv2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box">
+        <a class="bt-button personal-letter" href="https://im.csdn.net/chat/weixin_38912070" target="_blank" rel="noopener">私信</a>
+        </div>
+        <div class="opt-letter-watch-box"> 
+            <a class="personal-watch bt-button" id="btnAttent" >关注</a>  
+        </div>
+    </div>
+</div>
+<div id="asideSearchArticle" class="aside-box">
+	<div class="aside-content search-comter">
+    <div class="aside-search aside-search-blog">         
+        <input type="text" class="input-serch-blog" name="" autocomplete="off" value="" id="search-blog-words" placeholder="搜博主文章">
+        <a class="btn-search-blog">
+                    <img src="//csdnimg.cn/cdn/content-toolbar/csdn-sou.png?v=1587021042">
+        </a>
+    </div>
+    </div>
+</div>
+
+
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+			<li>
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/93816561" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_38912070/article/details/93816561","ab":"new"}'>
+				揭秘|每秒千万级的实时数据处理是怎么实现的？
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">25256</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/99916183" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_38912070/article/details/99916183","ab":"new"}'>
+				我其实一直都懂你|闲鱼聊天机器人
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">15673</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/100516039" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_38912070/article/details/100516039","ab":"new"}'>
+				在闲鱼实习做Flutter是什么感受？
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">14890</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/102849154" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_38912070/article/details/102849154","ab":"new"}'>
+				闲鱼前端基于serverless的一种多端开发解决方案
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">14644</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_38912070/article/details/93816485" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_38912070/article/details/93816485","ab":"new"}'>
+				揭秘！一个高准确率的Flutter埋点框架如何设计
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">13810</span>
+                </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16172825" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16172825","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16172825","ab":"new"}'>闲鱼商品选投实时性优化</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/blockshowtouse" class="user-name" target="_blank">在西湖起舞: </a>
+                    <span class="code-comments">厉害呀</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_38912070/article/details/115986478#comments_16171899" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/115986478#comments_16171899","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/115986478#comments_16171899","ab":"new"}'>闲鱼如何0到1搭建一套发布引导链路</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/legendaryhaha" class="user-name" target="_blank">legendaryhaha: </a>
+                    <span class="code-comments">就不能多说一点吗 不够看勒~~</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16165214" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16165214","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16165214","ab":"new"}'>闲鱼商品选投实时性优化</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/kimol_justdo" class="user-name" target="_blank">不正经的kimol君: </a>
+                    <span class="code-comments">放弃不难，但坚持一定很酷！</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16162435" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16162435","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16162435","ab":"new"}'>闲鱼商品选投实时性优化</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/feng07280624" class="user-name" target="_blank">做游戏的小poppy: </a>
+                    <span class="code-comments">软件开发，欢迎详谈</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16093938" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16093938","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967#comments_16093938","ab":"new"}'>闲鱼商品选投实时性优化</a>
+                <p class="comment ellipsis">
+                    <a href="https://rex88.blog.csdn.net" class="user-name" target="_blank">Rex~: </a>
+                    <span class="code-comments">同样是程序员，为何你能如此秀！</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="asideArchive" class="aside-box" style=" width:300px;">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_38912070/article/details/116077305" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_38912070/article/details/116077305","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_38912070/article/details/116077305","ab":"new"}'>近期好书推荐（内有新书预告）</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_38912070/article/details/116035967" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967","ab":"new"}'>闲鱼商品选投实时性优化</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_38912070/article/details/115986478" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_38912070/article/details/115986478","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_38912070/article/details/115986478","ab":"new"}'>闲鱼如何0到1搭建一套发布引导链路</a>
+            </li>
+        </ul>
+        <div class="archive-bar"></div>
+        <div class="archive-box">
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2021/04" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2021年</span><span class="num">29篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2020/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2020年</span><span class="num">85篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2019/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2019年</span><span class="num">87篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2018/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2018年</span><span class="num">68篇</span></a></div>
+        </div>
+    </div>
+</div>
+	<div id="footerRightAds" class="isShowFooterAds">
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- PC-博客详情页-左下视窗（300*600） -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1173711872"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&a=2488&c=0&k=&spm=1001.2101.3001.5001&d=1&t=3&u=3e9fa2faa4d141fbaf5769c98d20b384" style="display: block;width: 0px;height: 0px;"></div>
+		</div>
+	</div>
+    <!-- 详情页显示目录 -->
+<!--文章目录-->
+<div id="asidedirectory" class="aside-box">
+    <div class='groupfile' id="directory">
+        <h3 class="aside-title">目录</h3>
+        <div class="align-items-stretch group_item">
+            <div class="pos-box">
+            <div class="scroll-box">
+                <div class="toc-box"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-tooltip/2.4/user-tooltip.js"></script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-medal/1.0.6/user-medal.js"></script>    </div>
+<div class="recommend-right  align-items-stretch clearfix" id="rightAside" data-type="recommend">
+    <aside class="recommend-right_aside">
+        <div id="recommend-right" >
+                        <div class='flex-column aside-box groupfile' id="groupfile">
+                <div class="groupfile-div">
+                <h3 class="aside-title">目录</h3>
+                <div class="align-items-stretch group_item">
+                    <div class="pos-box">
+                        <div class="scroll-box">
+                            <div class="toc-box"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+<div id="asideArchive" class="aside-box" style=" width:300px;">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_38912070/article/details/116077305" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_38912070/article/details/116077305","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_38912070/article/details/116077305","ab":"new"}'>近期好书推荐（内有新书预告）</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_38912070/article/details/116035967" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_38912070/article/details/116035967","ab":"new"}'>闲鱼商品选投实时性优化</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_38912070/article/details/115986478" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_38912070/article/details/115986478","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_38912070/article/details/115986478","ab":"new"}'>闲鱼如何0到1搭建一套发布引导链路</a>
+            </li>
+        </ul>
+        <div class="archive-bar"></div>
+        <div class="archive-box">
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2021/04" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2021年</span><span class="num">29篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2020/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2020年</span><span class="num">85篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2019/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2019年</span><span class="num">87篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_38912070/article/month/2018/12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":""}'><span class="year">2018年</span><span class="num">68篇</span></a></div>
+        </div>
+    </div>
+</div>
+        </div>
+    </aside>
+</div>
+
+</div>
+<div class="mask-dark"></div>
+<script type="text/javascript">
+    var timert = setInterval(function(){
+      sideToolbar = $(".csdn-side-toolbar");
+      if (sideToolbar.length > 0) {
+        sideToolbar.css('cssText','bottom:64px !important;')
+        clearInterval(timert);
+      }
+    }, 200);
+</script>
+<script>
+    var articleId = 116279511;
+    var commentscount = 0;
+    var curentUrl = "https://blog.csdn.net/weixin_38912070/article/details/116279511";
+    var myUrl = "https://my.csdn.net/";
+    var highlight = [];
+    var isRecommendModule = true;
+    var isBaiduPre = false;
+    var baiduCount = 0;
+    var share_card_url = "https://blog.csdn.net/weixin_38912070/article/shareArticleCardPage?article_id=116279511"
+	var articleType = 1;
+    var baiduKey = "闲鱼易用高可扩的文章发布工具建设";
+    var userNewReport = false;
+    var needInsertBaidu = false;
+    var recommendRegularDomainArr = ["blog.csdn.net/.+/article/details/","download.csdn.net/download/","edu.csdn.net/course/detail/","ask.csdn.net/questions/","bbs.csdn.net/topics/","www.csdn.net/gather_.+/"]
+    var codeStyle = "atom-one-light";
+    var baiduSearchType = "title";
+    var canRead = true;
+    var blogMoveHomeArticle = true;
+    var showPcWindowAd = false;
+    var showSearchText = "";
+    var linkPage = true;
+    var articleSource = 3;
+    var articleReport = '{"pid": "blog", "spm":"1001.2101"}';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<div class="skin-boxshadow"></div>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+    <!-- 富文本柱状图  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/chart/chart.css"/>
+	<script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/chart/lib/chart.min.js"></script>
+    <script type="text/javascript" src="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/chart/widget2chart.js"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_highlight-db1e81323a.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_common-906586e915.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+<script>
+ // 全局声明
+ if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+        options: {
+            report:{
+                isShow: true,
+            },
+            qr: {
+                isShow: false,
+            },
+            guide: {
+                isShow: true
+            }
+        }
+    }
+    $(function(){
+        $(document).on('click',"a.option-box[data-type='report']",function() {
+            window.csdn.userLogin.loadAjax(function(res){
+                if(userNewReport){
+                    showReportNew(false,articleTitles);
+                }else{
+                    showReport(false,articleTitles);
+                }
+            })
+        });
+    })
+</script>
+<script src="https://csdnimg.cn/release/download/old_static/js/qrcode.js"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-cc21cbaf03.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/detail-f1051f3870.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/user-ordercart/1.0.6/user-ordercart.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/column-78261cfea6.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/side-toolbar/3.0/side-toolbar.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/common/shop-window-v2/shop-window.js" type="text/javascript"></script>
+<script>
+    var shopUserName = username;
+    ;$(function(){
+        window.csdn.shop.show({
+            userName: shopUserName,
+            topEl: $("#csdn-shop-window-top"),
+            bottomEl: $("#csdn-shop-window"),
+            callBack: function(res){
+                if(!res.top){
+                    $("#blogColumnPayAdvert").css({"display":"block"})
+                    $("#csdn-shop-window-top").css({"display":"none"})
+                }
+            }
+        })
+    })
+</script>
+<script src="https://g.csdnimg.cn/copyright/1.0.3/copyright.js" type="text/javascript"></script>
+<script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+        $('div.markdown_views')[0].className = 'markdown_views';
+    }
+</script>
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none",
+                ignoreClass:"title-article"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/user-login/2.3.2/user-login.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/login-box/1.1.4/login-box.js"></script></html>

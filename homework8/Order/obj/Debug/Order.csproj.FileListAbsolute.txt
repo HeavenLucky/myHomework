@@ -1,0 +1,14 @@
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.Form1.resources
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.Properties.Resources.resources
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.csproj.GenerateResource.cache
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\桌面\homework8\Order\bin\Debug\Order.exe.config
+\\vmware-host\Shared Folders\桌面\homework8\Order\bin\Debug\Order.exe
+\\vmware-host\Shared Folders\桌面\homework8\Order\bin\Debug\Order.pdb
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.exe
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.pdb
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.FormManage.resources
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.FormAdd2.resources
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.FormDelete.resources
+\\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.FormUpdate.resources

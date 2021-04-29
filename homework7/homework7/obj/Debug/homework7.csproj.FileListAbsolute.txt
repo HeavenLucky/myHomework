@@ -1,0 +1,10 @@
+\\vmware-host\Shared Folders\桌面\homework7\homework7\obj\Debug\homework7.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\桌面\homework7\homework7\obj\Debug\homework7.Form1.resources
+\\vmware-host\Shared Folders\桌面\homework7\homework7\obj\Debug\homework7.Properties.Resources.resources
+\\vmware-host\Shared Folders\桌面\homework7\homework7\obj\Debug\homework7.csproj.GenerateResource.cache
+\\vmware-host\Shared Folders\桌面\homework7\homework7\obj\Debug\homework7.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\桌面\homework7\homework7\bin\Debug\homework7.exe.config
+\\vmware-host\Shared Folders\桌面\homework7\homework7\bin\Debug\homework7.exe
+\\vmware-host\Shared Folders\桌面\homework7\homework7\bin\Debug\homework7.pdb
+\\vmware-host\Shared Folders\桌面\homework7\homework7\obj\Debug\homework7.exe
+\\vmware-host\Shared Folders\桌面\homework7\homework7\obj\Debug\homework7.pdb

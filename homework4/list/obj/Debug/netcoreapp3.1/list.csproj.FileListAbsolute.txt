@@ -1,0 +1,11 @@
+/Users/lucifer/Projects/newHomework/homework4/list/bin/Debug/netcoreapp3.1/list.deps.json
+/Users/lucifer/Projects/newHomework/homework4/list/bin/Debug/netcoreapp3.1/list.runtimeconfig.json
+/Users/lucifer/Projects/newHomework/homework4/list/bin/Debug/netcoreapp3.1/list.runtimeconfig.dev.json
+/Users/lucifer/Projects/newHomework/homework4/list/bin/Debug/netcoreapp3.1/list.dll
+/Users/lucifer/Projects/newHomework/homework4/list/bin/Debug/netcoreapp3.1/list.pdb
+/Users/lucifer/Projects/newHomework/homework4/list/obj/Debug/netcoreapp3.1/list.AssemblyInfoInputs.cache
+/Users/lucifer/Projects/newHomework/homework4/list/obj/Debug/netcoreapp3.1/list.AssemblyInfo.cs
+/Users/lucifer/Projects/newHomework/homework4/list/obj/Debug/netcoreapp3.1/list.csproj.CoreCompileInputs.cache
+/Users/lucifer/Projects/newHomework/homework4/list/obj/Debug/netcoreapp3.1/list.dll
+/Users/lucifer/Projects/newHomework/homework4/list/obj/Debug/netcoreapp3.1/list.pdb
+/Users/lucifer/Projects/newHomework/homework4/list/obj/Debug/netcoreapp3.1/list.genruntimeconfig.cache

@@ -1,0 +1,12 @@
+/Users/lucifer/Projects/newHomework/homework4/alarm/bin/Debug/netcoreapp3.1/alarm.deps.json
+/Users/lucifer/Projects/newHomework/homework4/alarm/bin/Debug/netcoreapp3.1/alarm.runtimeconfig.json
+/Users/lucifer/Projects/newHomework/homework4/alarm/bin/Debug/netcoreapp3.1/alarm.runtimeconfig.dev.json
+/Users/lucifer/Projects/newHomework/homework4/alarm/bin/Debug/netcoreapp3.1/alarm.dll
+/Users/lucifer/Projects/newHomework/homework4/alarm/bin/Debug/netcoreapp3.1/alarm.pdb
+/Users/lucifer/Projects/newHomework/homework4/alarm/obj/Debug/netcoreapp3.1/alarm.csprojAssemblyReference.cache
+/Users/lucifer/Projects/newHomework/homework4/alarm/obj/Debug/netcoreapp3.1/alarm.AssemblyInfoInputs.cache
+/Users/lucifer/Projects/newHomework/homework4/alarm/obj/Debug/netcoreapp3.1/alarm.AssemblyInfo.cs
+/Users/lucifer/Projects/newHomework/homework4/alarm/obj/Debug/netcoreapp3.1/alarm.csproj.CoreCompileInputs.cache
+/Users/lucifer/Projects/newHomework/homework4/alarm/obj/Debug/netcoreapp3.1/alarm.dll
+/Users/lucifer/Projects/newHomework/homework4/alarm/obj/Debug/netcoreapp3.1/alarm.pdb
+/Users/lucifer/Projects/newHomework/homework4/alarm/obj/Debug/netcoreapp3.1/alarm.genruntimeconfig.cache

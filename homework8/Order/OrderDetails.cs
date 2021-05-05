@@ -10,7 +10,7 @@ namespace Order
 {
     [Serializable]
     public class OrderDetails
-    {
+    {public OrderDetails() { }
 
 
         public int GoodsAmount { get; set; }

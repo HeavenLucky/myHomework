@@ -12,3 +12,17 @@
 \\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.FormAdd2.resources
 \\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.FormDelete.resources
 \\vmware-host\Shared Folders\桌面\homework8\Order\obj\Debug\Order.FormUpdate.resources
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.csprojAssemblyReference.cache
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.Form1.resources
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.FormManage.resources
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.FormAdd2.resources
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.FormDelete.resources
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.FormUpdate.resources
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.Properties.Resources.resources
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.csproj.GenerateResource.cache
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.csproj.CoreCompileInputs.cache
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.exe
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\obj\Debug\Order.pdb
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\bin\Debug\Order.exe.config
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\bin\Debug\Order.exe
+C:\Users\lucifer\Source\Repos\myHomework\homework8\Order\bin\Debug\Order.pdb

@@ -23,6 +23,7 @@ namespace Order
             orderlist.Add(details);
         }
 
+        public Ordera() { }
         public Ordera(int orderID,
         Customer customer)
 

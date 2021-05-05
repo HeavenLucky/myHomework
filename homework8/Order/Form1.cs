@@ -15,7 +15,7 @@ namespace Order
     {
       
             
-          public  OrderService orderService { get; set; } = new OrderService();
+          public  OrderService OrderService { get; set; } = new OrderService();
       
            public string Keyword { get; set; }
        
@@ -42,10 +42,11 @@ namespace Order
             Ordera order2 = new Ordera(2, customer2);
             order2.AddDetails(orderDetails2);
             
-            orderService.orders.Add(order1);
-            orderService.orders.Add(order2);
-            bindingSourceorder.DataSource = orderService.orders;
-
+            OrderService.orders.Add(order1);
+            OrderService.orders.Add(order2);
+            bindingSourceorder.DataSource =OrderService.orders;
+ 
+          
             textBox1.DataBindings.Add("Text", this, "Keyword");
             comboBox.SelectedIndex = 0;
         }
@@ -70,23 +71,23 @@ namespace Order
             switch (comboBox.SelectedIndex)
             {
                 case 0://所有订单
-                    bindingSourceorder.DataSource = orderService.orders;
+                    bindingSourceorder.DataSource = OrderService.orders;
                     break;
                 case 1://根据ID查询
                   int orderID =Int32.Parse(textBox1.Text);
                    
-                    Ordera order = orderService.QueryOrderById(orderID);
+                    Ordera order = OrderService.QueryOrderById(orderID);
                     List<Ordera> result = new List<Ordera>();
                     if (order != null) result.Add(order);
                     bindingSourceorder.DataSource = result;
                     break;
                 case 2://根据客户查询
 
-                    bindingSourceorder.DataSource = orderService.QueryByCustomerName(Keyword);
+                    bindingSourceorder.DataSource = OrderService.QueryByCustomerName(Keyword);
                     bindingSourceorder.ResetBindings(false);
                     break;
                 case 3://根据货物查询
-                    bindingSourceorder.DataSource = orderService.QueryByGoodsName(Keyword);
+                    bindingSourceorder.DataSource = OrderService.QueryByGoodsName(Keyword);
                     
                     break;
                 
@@ -102,9 +103,68 @@ namespace Order
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+     
             FormManage fa = new FormManage();
-            fa.Show();
+           // fa.ShowDialog();
+            if (fa.ShowDialog() == DialogResult.OK)
+            {
+                OrderService.AddOrder(fa.Ordera);
+                bindingSourceorder.ResetBindings(false);
+                bindingSourcegoods.ResetBindings(false);
+                    
+
+            }
+        }
+
+        private void delbutton_Click(object sender, EventArgs e)
+        {
+            FormDelete fd = new FormDelete();
+           if(fd.ShowDialog() == DialogResult.OK)
+            {
+                OrderService.DeleteOrder(fd.Orderid);
+            }
+            bindingSourceorder.ResetBindings(false);
+        }
+
+        private void updbutton_Click(object sender, EventArgs e)
+        {
+            FormUpdate fu = new FormUpdate();
+            if (fu.ShowDialog() == DialogResult.OK)
+            {
+                OrderService.Update(fu.Ordera);
+            }
+
+
+
+
+
+
+                
+
+
+           bindingSourceorder.ResetBindings(false);
+        }
+
+        private void expbutton_Click(object sender, EventArgs e)
+        {
+         
+            if (saveFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                String fileName = saveFileDialog1.FileName;
+                OrderService.Export(fileName);
+            }
+
+        }
+
+        private void impbutton_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                String fileName = openFileDialog1.FileName;
+                OrderService.Import(fileName);
+                OrderService.QueryAll();
+                bindingSourceorder.ResetBindings(false);
+            }
         }
     }
 }

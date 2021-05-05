@@ -38,16 +38,8 @@ namespace Order
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSourceorder = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourcegoods = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panellow = new System.Windows.Forms.Panel();
@@ -56,6 +48,16 @@ namespace Order
             this.updbutton = new System.Windows.Forms.Button();
             this.delbutton = new System.Windows.Forms.Button();
             this.addbutton = new System.Windows.Forms.Button();
+            this.orderIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalAmountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceorder = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.paneltop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -63,12 +65,12 @@ namespace Order
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcegoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panellow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceorder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -148,10 +150,10 @@ namespace Order
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn,
-            this.customerDataGridViewTextBoxColumn,
-            this.timeDataGridViewTextBoxColumn,
-            this.totalAmountDataGridViewTextBoxColumn});
+            this.orderIDDataGridViewTextBoxColumn1,
+            this.customerDataGridViewTextBoxColumn1,
+            this.timeDataGridViewTextBoxColumn1,
+            this.totalAmountDataGridViewTextBoxColumn1});
             this.dataGridView3.DataSource = this.bindingSourceorder;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
@@ -161,43 +163,6 @@ namespace Order
             this.dataGridView3.Size = new System.Drawing.Size(873, 452);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "orderID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "orderID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // customerDataGridViewTextBoxColumn
-            // 
-            this.customerDataGridViewTextBoxColumn.DataPropertyName = "customer";
-            this.customerDataGridViewTextBoxColumn.HeaderText = "customer";
-            this.customerDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
-            this.customerDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // timeDataGridViewTextBoxColumn
-            // 
-            this.timeDataGridViewTextBoxColumn.DataPropertyName = "time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "time";
-            this.timeDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
-            this.timeDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // totalAmountDataGridViewTextBoxColumn
-            // 
-            this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.HeaderText = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
-            this.totalAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalAmountDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // bindingSourceorder
-            // 
-            this.bindingSourceorder.DataSource = typeof(Order.Ordera);
             // 
             // dataGridView1
             // 
@@ -225,31 +190,6 @@ namespace Order
             this.dataGridView4.RowTemplate.Height = 37;
             this.dataGridView4.Size = new System.Drawing.Size(655, 452);
             this.dataGridView4.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "GoodsAmount";
-            this.dataGridViewTextBoxColumn1.HeaderText = "GoodsAmount";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Goods";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Goods";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // amountPriceDataGridViewTextBoxColumn
-            // 
-            this.amountPriceDataGridViewTextBoxColumn.DataPropertyName = "AmountPrice";
-            this.amountPriceDataGridViewTextBoxColumn.HeaderText = "AmountPrice";
-            this.amountPriceDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.amountPriceDataGridViewTextBoxColumn.Name = "amountPriceDataGridViewTextBoxColumn";
-            this.amountPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountPriceDataGridViewTextBoxColumn.Width = 200;
             // 
             // bindingSourcegoods
             // 
@@ -285,8 +225,9 @@ namespace Order
             this.impbutton.Name = "impbutton";
             this.impbutton.Size = new System.Drawing.Size(154, 48);
             this.impbutton.TabIndex = 4;
-            this.impbutton.Text = "导出订单";
+            this.impbutton.Text = "导入订单";
             this.impbutton.UseVisualStyleBackColor = true;
+            this.impbutton.Click += new System.EventHandler(this.impbutton_Click);
             // 
             // expbutton
             // 
@@ -294,8 +235,9 @@ namespace Order
             this.expbutton.Name = "expbutton";
             this.expbutton.Size = new System.Drawing.Size(131, 48);
             this.expbutton.TabIndex = 3;
-            this.expbutton.Text = "导入订单";
+            this.expbutton.Text = "导出订单";
             this.expbutton.UseVisualStyleBackColor = true;
+            this.expbutton.Click += new System.EventHandler(this.expbutton_Click);
             // 
             // updbutton
             // 
@@ -305,6 +247,7 @@ namespace Order
             this.updbutton.TabIndex = 2;
             this.updbutton.Text = "修改订单";
             this.updbutton.UseVisualStyleBackColor = true;
+            this.updbutton.Click += new System.EventHandler(this.updbutton_Click);
             // 
             // delbutton
             // 
@@ -314,6 +257,7 @@ namespace Order
             this.delbutton.TabIndex = 1;
             this.delbutton.Text = "删除订单";
             this.delbutton.UseVisualStyleBackColor = true;
+            this.delbutton.Click += new System.EventHandler(this.delbutton_Click);
             // 
             // addbutton
             // 
@@ -324,6 +268,72 @@ namespace Order
             this.addbutton.Text = "添加订单";
             this.addbutton.UseVisualStyleBackColor = true;
             this.addbutton.Click += new System.EventHandler(this.addbutton_Click);
+            // 
+            // orderIDDataGridViewTextBoxColumn1
+            // 
+            this.orderIDDataGridViewTextBoxColumn1.DataPropertyName = "orderID";
+            this.orderIDDataGridViewTextBoxColumn1.HeaderText = "orderID";
+            this.orderIDDataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.orderIDDataGridViewTextBoxColumn1.Name = "orderIDDataGridViewTextBoxColumn1";
+            this.orderIDDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // customerDataGridViewTextBoxColumn1
+            // 
+            this.customerDataGridViewTextBoxColumn1.DataPropertyName = "customer";
+            this.customerDataGridViewTextBoxColumn1.HeaderText = "customer";
+            this.customerDataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.customerDataGridViewTextBoxColumn1.Name = "customerDataGridViewTextBoxColumn1";
+            this.customerDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // timeDataGridViewTextBoxColumn1
+            // 
+            this.timeDataGridViewTextBoxColumn1.DataPropertyName = "time";
+            this.timeDataGridViewTextBoxColumn1.HeaderText = "time";
+            this.timeDataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.timeDataGridViewTextBoxColumn1.Name = "timeDataGridViewTextBoxColumn1";
+            this.timeDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // totalAmountDataGridViewTextBoxColumn1
+            // 
+            this.totalAmountDataGridViewTextBoxColumn1.DataPropertyName = "TotalAmount";
+            this.totalAmountDataGridViewTextBoxColumn1.HeaderText = "TotalAmount";
+            this.totalAmountDataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.totalAmountDataGridViewTextBoxColumn1.Name = "totalAmountDataGridViewTextBoxColumn1";
+            this.totalAmountDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.totalAmountDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // bindingSourceorder
+            // 
+            this.bindingSourceorder.DataSource = typeof(Order.Ordera);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "GoodsAmount";
+            this.dataGridViewTextBoxColumn1.HeaderText = "GoodsAmount";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Goods";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Goods";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // amountPriceDataGridViewTextBoxColumn
+            // 
+            this.amountPriceDataGridViewTextBoxColumn.DataPropertyName = "AmountPrice";
+            this.amountPriceDataGridViewTextBoxColumn.HeaderText = "AmountPrice";
+            this.amountPriceDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.amountPriceDataGridViewTextBoxColumn.Name = "amountPriceDataGridViewTextBoxColumn";
+            this.amountPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountPriceDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -344,12 +354,12 @@ namespace Order
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcegoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panellow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceorder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,15 +385,17 @@ namespace Order
         private System.Windows.Forms.BindingSource bindingSourceorder;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.BindingSource bindingSourcegoods;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodsamountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

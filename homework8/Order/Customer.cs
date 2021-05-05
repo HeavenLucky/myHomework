@@ -11,7 +11,7 @@ namespace Order
     {
         public String name { get; set; }
         public String address { get; set; }
-
+        public Customer() { }
 
 
         public Customer(String name, String address)

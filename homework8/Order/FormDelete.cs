@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Order
-{
+{    
     public partial class FormDelete : Form
     {
         public FormDelete()
         {
             InitializeComponent();
         }
+
+        public int Orderid { get;  set; }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -24,6 +26,7 @@ namespace Order
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            Orderid = Int32.Parse(textBox1.Text);
 
         }
     }

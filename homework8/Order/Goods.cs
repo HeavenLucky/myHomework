@@ -10,7 +10,7 @@ namespace Order
         public String goodsname { get; set; }
         public double price { get; set; }
 
-
+        public Goods() { }
 
 
         public Goods(String goodsname, double price, int goodsid)

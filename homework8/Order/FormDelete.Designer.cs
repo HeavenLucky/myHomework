@@ -36,7 +36,8 @@ namespace Order
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(273, 189);
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Location = new System.Drawing.Point(156, 185);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 65);
             this.button1.TabIndex = 0;

@@ -16,6 +16,8 @@ namespace Order
         }
         public void AddOrder(Ordera order)
         {
+            if (orders.Contains(order))
+                throw new ApplicationException($"添加错误: 订单已经存在了!");
             orders.Add(order);
         }
 
@@ -90,17 +92,18 @@ namespace Order
         public void Import(string path)
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Ordera>));
-
-            FileStream fs = File.Create(path);
-            List<Ordera> temp = (List<Ordera>)xs.Deserialize(fs);
-            temp.ForEach(order =>
+            using (FileStream fs = new FileStream(path, FileMode.Open))
             {
-                if (!orders.Contains(order))
-                {
-                    orders.Add(order);
-                }
-            });
-
+                List<Ordera> temp = (List<Ordera>)xs.Deserialize(fs);
+                temp.ForEach(order => {
+                    if (!orders.Contains(order))
+                    {
+                        orders.Add(order);
+                    }
+                });
+            }
         }
+
     }
+    
 }

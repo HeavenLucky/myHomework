@@ -91,14 +91,14 @@ namespace homework5
         {
             XmlSerializer xs = new XmlSerializer(typeof(List<Order>));
             using FileStream fs = new FileStream(path, FileMode.Open);
-            List<Order> temp = (List<Order>)xs.Deserialize(fs);
-            temp.ForEach(order =>
+            List<Order> listtemp = (List<Order>)xs.Deserialize(fs);
+            foreach(var order in listtemp)
             {
                 if (!orders.Contains(order))
                 {
                     orders.Add(order);
                 }
-            });
+            };
 
         }
     }

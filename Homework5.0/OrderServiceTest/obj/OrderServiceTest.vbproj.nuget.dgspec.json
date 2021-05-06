@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj": {}
+    "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj": {
+    "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj",
+        "projectUniqueName": "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj",
         "projectName": "OrderServiceTest",
-        "projectPath": "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj",
+        "projectPath": "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\OrderServiceTest\\OrderServiceTest.vbproj",
         "packagesPath": "C:\\Users\\lucifer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\OrderServiceTest\\obj\\",
+        "outputPath": "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\OrderServiceTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

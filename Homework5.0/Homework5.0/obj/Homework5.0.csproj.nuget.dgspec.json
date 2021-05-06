@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj": {}
+    "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj": {
+    "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj",
+        "projectUniqueName": "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj",
         "projectName": "Homework5.0",
-        "projectPath": "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj",
+        "projectPath": "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\Homework5.0\\Homework5.0.csproj",
         "packagesPath": "C:\\Users\\lucifer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucifer\\source\\repos\\myHomework\\Homework5.0\\Homework5.0\\obj\\",
+        "outputPath": "C:\\Users\\lucifer\\Source\\Repos\\myHomework\\Homework5.0\\Homework5.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

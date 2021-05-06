@@ -61,7 +61,7 @@ namespace Homework9
            
             string startUrl = textBox1.Text.ToString();
             //arg？？？
-
+          
             crawler.Enter(startUrl);
 
         }
@@ -82,7 +82,7 @@ namespace Homework9
         private void button2_Click(object sender, EventArgs e)
         {
             bindingSourcetrue.ResetBindings(false);
-            bindingSourcefalse.ResetBindings(true);
+            bindingSourcefalse.ResetBindings(false);
 
         }
     }

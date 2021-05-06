@@ -1,21 +1,238 @@
-﻿<!doctype html><html lang="zh" data-server-rendered="true"><head><title>腾讯招聘专场：在鹅厂遇见未来-CSDN直播</title> <meta name="keywords" content="腾讯招聘专场：在鹅厂遇见未来"> <meta name="description"> <meta http-equiv="content-type" content="text/html;charset=utf-8"> <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> <meta name="referrer" content="always"> <!----> <!----> <!----> <!----> <!----> <link rel="shortcut icon" href="https://g.csdnimg.cn/static/logo/favicon32.ico" type="image/x-icon"> <!----> <!----> 
-          <meta name="toolbar" content={"type":"0"} />
-       
-          <meta name="report" content={"spm":"1016.2132"} />
-       <script src="https://g.csdnimg.cn/??lib/jquery/1.12.4/jquery.min.js,user-tooltip/2.2/user-tooltip.js,lib/qrcode/1.0.0/qrcode.min.js"></script> <script src='//g.csdnimg.cn/common/csdn-report/report.js' type='text/javascript'></script> 
-         <script src="https://g.csdnimg.cn/user-ordercart/2.0.3/user-ordercart.js?ts=2.0.3"></script>
-       
-          <script src="https://g.csdnimg.cn/login-box/1.1.4/login-box.js"></script>
-       
-         <script src="https://g.csdnimg.cn/user-ordertip/3.0.2/user-ordertip.js?t=3.0.2"></script>
-       
-         <script src="https://g.csdnimg.cn/collection-box/2.0.2/collection-box.js"></script><link rel="stylesheet" href="https://csdnimg.cn/release/cmsfe/public/css/common.b9128c61.css"><link rel="stylesheet" href="https://csdnimg.cn/release/cmsfe/public/css/tpl/live-room-detail/index.a47de8fc.css"></head> <body><div id="app"><div><div class="main"><div class="page-container page-component"><div><div class="home_wrap"><div floor-index="0" floor-data="[object Object]" class="AppRoom" data-v-78ac957e><div data-v-6363437f data-v-78ac957e><div class="el-dialog__wrapper" style="display:none;" data-v-6363437f><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top:30vh;width:540px;"><div class="el-dialog__header"><span class="el-dialog__title"></span><!----></div><!----><!----></div></div></div> <div class="container-box" data-v-78ac957e><div style="height: 24px" data-v-78ac957e></div> <div class="container" data-v-78ac957e><div class="left-live" data-v-78ac957e><div class="left-live-title" data-v-78ac957e><!----> <!----></div> <div id="player-div" data-v-78ac957e><div id="player-con-pc" class="left-live-video" data-v-78ac957e><CsdnPlayer playerConfig="[object Object]" danmustate="" data-v-78ac957e></CsdnPlayer> <!----> <!----> <!----> <!----> <!----></div> <!----> <!----></div> <div class="left-live-footer" style="z-index:0;" data-v-78ac957e><!----> <!----> <!----></div></div> <div class="right-barrage" data-v-78ac957e><div class="chat-room" data-v-fbc7a366 data-v-78ac957e><div class="right-barrage-container" data-v-fbc7a366><div class="right-barrage-comments" data-v-fbc7a366><span class="right-barrage-svg" data-v-fbc7a366><img src="https://csdnimg.cn/release/cmsfe/public/img/laba.c6fb65a0.png" data-v-fbc7a366> <!----></span> <span id="right-barrage-content" class="right-barrage-content" data-v-fbc7a366>公告: 欢迎来到的直播间！</span> <!----> <!----></div> <header class="right-barrage-header" style="position: relative;" data-v-fbc7a366><!----> <div class="right-pay-list" style="display:none;" data-v-fbc7a366><div class="right-pay-list-top" data-v-fbc7a366><div class="right-pay-list-top-left" data-v-fbc7a366><img src="https://csdnimg.cn/release/cmsfe/public/img/icon-payList.f0699101.png" alt class="pay-list-img" data-v-fbc7a366></div> <div class="right-pay-list-top-right" data-v-fbc7a366></div></div> <div class="right-pay-list-bottom" style="display:none;" data-v-fbc7a366><div class="pay-but-no-rank" data-v-fbc7a366><div class="pay-but-no-rank-left" data-v-fbc7a366><span class="pay-but-no-rank-username limit-one-line" data-v-fbc7a366></span> <span class="pay-but-no-rank-badge" data-v-fbc7a366>未上榜</span></div> <div class="pay-but-no-rank-right" data-v-fbc7a366>
-              
-              <img src="https://csdnimg.cn/release/cmsfe/public/img/icon-rank-bi.8dd5ea78.png" alt class="pay-rank-bi" data-v-fbc7a366></div></div></div></div></header> <div class="right-barrage-main" data-v-fbc7a366><div class="outer-container" data-v-fbc7a366><ul id="chat-msg-ul" class="visitors chat-msg-list none-rank-list" data-v-fbc7a366><!----> </ul></div> <div class="enjoy-play-box" data-v-fbc7a366></div></div> <footer class="right-barrage-footer" data-v-fbc7a366><!----> <!----> <!----> <!----> <img src="https://csdnimg.cn/release/cmsfe/public/img/comment_face_icon.923cfaf7.png" class="send_comment_img" data-v-fbc7a366> <img src="https://csdnimg.cn/release/cmsfe/public/img/comment_word_icon.0816b6c9.png" class="send_comment_img" data-v-fbc7a366> <!----> <div class="share-dialong-footer" data-v-fbc7a366><div class="input el-textarea is-disabled" data-v-fbc7a366><textarea disabled="disabled" autocomplete="off" id="send-textarea" rows="2" class="el-textarea__inner"></textarea><!----></div> <button disabled="disabled" type="button" class="el-button el-button--default is-disabled chat-room" data-v-fbc7a366><!----><!----><span>发送</span></button> <span data-bind-login="true" class="login" data-v-fbc7a366><b data-v-fbc7a366>登录</b>发评论，参与主播互动
-        </span> <!----></div></footer></div></div></div></div></div> <!----> <!----> <!----> <!----></div></div></div></div></div> <div>
-        <script type="text/javascript" src="https://g.csdnimg.cn/common/csdn-footer/csdn-footer.js" data-isfootertrack="false" defer></script>
-      </div></div></div><script> window.__INITIAL_STATE__= {"csrf":"2PFsBqQZ-CCIH_KPQ_BdVfGQYaCVO8i4sXng","origin":"http:\u002F\u002Flive.csdn.net","isMobile":false,"cookie":"","ip":"113.57.47.61","pageData":{"page":{"pageId":84,"title":"直播详情页","keywords":"直播详情页","description":"直播详情页","ext":{}},"template":{"templateId":40,"templateComponentName":"live-room-detail","title":"直播详情页","floorList":[{"floorId":389,"floorComponentName":"floor-liveroom-page","title":"直播详情","description":"直播详情","indexOrder":1,"componentList":[{"componentName":"baseInfo","componentDataId":"live-live-detail","componentConfigData":{},"relationType":3}]}]},"data":{"baseInfo":{"user":{"isAnchorFollow":false},"owner":{"genderInfo":{"big_img":"https:\u002F\u002Fimg-bss.csdnimg.cn\u002F201912190626444431.png","name":"MAN","description":"男","small_img":"https:\u002F\u002Fimg-bss.csdnimg.cn\u002F201912190626444431.png"},"fansTotal":2965,"levelInfo":[{"bigImg":"https:\u002F\u002Fimg-bss.csdnimg.cn\u002F201912110737358703.png","smallImg":"https:\u002F\u002Fimg-bss.csdnimg.cn\u002F201912110807196484.png","name":"博客等级L5","description":""}],"vipInfo":{},"nickName":"遇见OFFER","avatar":"https:\u002F\u002Fprofile.csdnimg.cn\u002F1\u002F8\u002FF\u002F2_yzkskaka","isVip":false,"isCompanyExpert":true},"userInfo":[{"big_img":"https:\u002F\u002Fimg-bss.csdnimg.cn\u002F201912190626444431.png","name":"MAN","description":"男","small_img":"https:\u002F\u002Fimg-bss.csdnimg.cn\u002F201912190626444431.png"}],"likeInfo":null,"content":{"toolCoverImg":"","defaultResolution":"hd","createRole":",遇见offer项目组,","screen":1,"owtLiveId":"5f16636956fa0f16922a852f","videoId":"5285890805823078861","source":null,"buyLiveGroup":0,"price":0,"liveUrl":"https:\u002F\u002Flive.csdn.net\u002Froom\u002Fyzkskaka\u002FwgOUuuyi","id":2005,"canComment":1,"commentAmount":939,"canGift":1,"fansVisible":0,"homeRecommend":0,"ext":null,"pullStreamsUrl":{"sd":{"rtmp":"rtmp:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_720p?txSecret=6c8be3434ca752b372c4ad868d537ada&txTime=608ae5342592000","flv":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_720p.flv?txSecret=6c8be3434ca752b372c4ad868d537ada&txTime=608ae5342592000","m3u8":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_720p.m3u8?txSecret=6c8be3434ca752b372c4ad868d537ada&txTime=608ae5342592000"},"auto":{"rtmp":"rtmp:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_?txSecret=ef9e60c25205806f47955d89142e5679&txTime=608ae5342592000","flv":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_.flv?txSecret=ef9e60c25205806f47955d89142e5679&txTime=608ae5342592000","m3u8":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_.m3u8?txSecret=ef9e60c25205806f47955d89142e5679&txTime=608ae5342592000"},"od":{"rtmp":"rtmp:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi?txSecret=326b281d0655aea5aca8e9a3dbf3a472&txTime=608ae5342592000","flv":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi.flv?txSecret=326b281d0655aea5aca8e9a3dbf3a472&txTime=608ae5342592000","m3u8":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi.m3u8?txSecret=326b281d0655aea5aca8e9a3dbf3a472&txTime=608ae5342592000"},"ld":{"rtmp":"rtmp:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_640p?txSecret=9b414262a9ce962a9dfd569d10b695e7&txTime=608ae5342592000","flv":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_640p.flv?txSecret=9b414262a9ce962a9dfd569d10b695e7&txTime=608ae5342592000","m3u8":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_640p.m3u8?txSecret=9b414262a9ce962a9dfd569d10b695e7&txTime=608ae5342592000"},"hd":{"rtmp":"rtmp:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_1080p?txSecret=9acdec67eb463ac49a7b190017aba69e&txTime=608ae5342592000","flv":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_1080p.flv?txSecret=9acdec67eb463ac49a7b190017aba69e&txTime=608ae5342592000","m3u8":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_1080p.m3u8?txSecret=9acdec67eb463ac49a7b190017aba69e&txTime=608ae5342592000"},"fd":{"rtmp":"rtmp:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_480p?txSecret=d607e0eba0abc483aab98b8ca5570728&txTime=608ae5342592000","flv":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_480p.flv?txSecret=d607e0eba0abc483aab98b8ca5570728&txTime=608ae5342592000","m3u8":"https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_480p.m3u8?txSecret=d607e0eba0abc483aab98b8ca5570728&txTime=608ae5342592000"}},"bizNo":"media_activity","finishTime":1596013551295,"liveGroup":"","canShop":0,"headImg":"https:\u002F\u002Flive-file.csdnimg.cn\u002Frelease\u002Flive\u002Ffile\u002F1603439942604.png?x-oss-process=image\u002Fresize,l_560","liveTags":[{"content_type":2,"id":1206,"title":"系列直播"}],"commentUser":185,"bgImg":null,"isAdmin":false,"dateNumber":0,"topicUrl":null,"goodsUrl":"https:\u002F\u002Flive.csdn.net\u002Fshop\u002FGoodsList\u002FwgOUuuyi","needPay":0,"pcPullStreamType":"flv","liveChannel":2,"liveViewRtc":0,"viewAmount":9368,"diggId":0,"status":2,"h5PullStreamType":"m3u8","goodItemId":2726,"liveType":3,"canLike":true,"casterId":"","isCamera":1,"title":"腾讯招聘专场：在鹅厂遇见未来","anchorName":"yzkskaka","userAppoint":null,"needAuth":0,"likeAmount":9114,"authUrl":null,"uiStyle":"","videoUrl":"https:\u002F\u002Fvedu.csdnimg.cn\u002Foriginal\u002F00d362a060f64082a2a3f14fe9cc383f\u002F5b51ec81-173a2db2074-0005-0953-cad-356e4.mp4","viewUser":7057,"liveEduRelations":[],"reserve":0,"noticeBO":null,"isPublic":1,"startTime":1596003489583,"definition":"ud","isViewer":0,"notice":null,"allowAsk":1,"liveDesc":"","appPullStreamType":"rtmp","fansIncrease":274,"pullStreams":["rtmp:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_1080p?txSecret=9acdec67eb463ac49a7b190017aba69e&txTime=608ae5342592000","https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_1080p.flv?txSecret=9acdec67eb463ac49a7b190017aba69e&txTime=608ae5342592000","https:\u002F\u002Flive-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi_1080p.m3u8?txSecret=9acdec67eb463ac49a7b190017aba69e&txTime=608ae5342592000"],"reserveType":0,"updateTime":1609294422831,"liveStream":"rtmp:\u002F\u002Frtmp-tx.csdnimg.cn\u002Flive\u002FwgOUuuyi?txSecret=f196e96963fa6680c9866ce095aa5073&txTime=5f3df069","liveId":"wgOUuuyi","frameCount":0,"canCall":0,"videoDuration":"9823","createTime":1595302761503,"liveTag":"","userNumberCount":66984,"isTest":0,"createUser":"lujb","reserveAddress":"","isPushCdn":1}}}},"CFG":{"ALIPLAYER_VERSION":"v4","ALIPLAYER_H5_VERSION":"mobile_v1","ENV":"prod","ROOT_URL":"https:\u002F\u002Fcms-mall.csdn.net\u002F","VUE_APP_API_URL_SERVER":"http:\u002F\u002Fcms-api.csdn.net\u002F","VUE_APP_API_URL":"https:\u002F\u002Fcms-api.csdn.net\u002F","LOGIN_URL":"https:\u002F\u002Fpassport.csdn.net\u002Faccount\u002Flogin","EDU_APP_API_URL_PRE":"https:\u002F\u002Fedu-core-api.csdn.net\u002F","CART_JSONP_URL":"https:\u002F\u002Fcsdnimg.cn\u002Frelease\u002Fcart\u002Fpub\u002F1.0.4\u002Fcart_jsonp.js","EDU_APP_API_URL":"https:\u002F\u002Fedu-core-api.csdn.net\u002F","VUE_Mall_API_URL":"https:\u002F\u002Fmall.csdn.net\u002F","SENTRY_URL":"https:\u002F\u002Fbfb4556a6c704449bdadc1bfec66342f@sentry.csdn.net\u002F18","APPKEY":"203801083","APPSECRET":"ze9197msx11vjzccxjw3m52ydcckugaq"},"active":0,"navBarFixed":false,"componentId":"live-room-detail"};</script><script type="text/javascript" src="https://csdnimg.cn/release/cmsfe/public/js/runtime.5017c4ae.js"></script><script type="text/javascript" src="https://csdnimg.cn/release/cmsfe/public/js/chunk/common.926fc670.js"></script><script type="text/javascript" src="https://csdnimg.cn/release/cmsfe/public/js/chunk/tpl/live-room-detail/index.70680360.js"></script></body> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> 
-         <script src="https://g.csdnimg.cn/side-toolbar/3.0/side-toolbar.js" ></script>
-       
-         <script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js"></script>
-       <!----> <!----> <!----> <!----> <!----></html>
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2010 年 11月 2 日 随笔档案 - 拓荒者 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=zS6-e1bxywlu3kpHvpr1J6MySwya3ztFtEnS7RYQ0Fk" />
+    <link id="MainCss" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001.min.css?v=9x2ZP2K8SSBJowZA6xv0D5FvOmlvd5g21u0NBEAEwfQ" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001-mobile.min.css?v=xFiYH0_zTHqf_pk9Nf2PvR4VdQ1qJnJcRVcot-VdM-8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/dstang2000/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/dstang2000/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/dstang2000/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 9986;
+        var currentBlogApp = 'dstang2000';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'AnotherEon001';
+        var visitorUserId = '';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=yJQaJ16S00coMfzvh-NgF2zm2J87f5VfNamFdsnKHrc"></script>
+    
+    
+    
+</head>
+<body class="has-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/dstang2000/">拓荒者 dstang2000 <a href="http://www.dstang.com"><font size=-1 color=red>http://www.dstang.com</font></a>
+</h1>
+<div id="subtitle">KISS：Keeping things that work，Improve systems procedures styles，Start things of value，Stop things of no value </div>
+</div>
+<div id="sub"><div id="blog_stats_place_holder"><script>loadBlogStats();</script></div></div>
+
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	
+        <!--done-->
+
+<p class="date">
+	<span>		  
+	<a>2010年11月2日</a>
+	</span>
+</p>
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2010/11/02/1867406.html">
+    <span>
+        实测:xml与json速度约差4倍
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+        <div class="postbody">
+            
+
+    <div class="c_b_p_desc">
+摘要：xml与json在javascript中解析并使用，速度大约相差4倍。（在IE中测试的结果）。其中主要不在于eval,与xml parse的时间差别，主要在于属性访问上的差别：xml中使用这样的方式 markers[i].getAttribute("info") 与json中使用这样的方式 var info = markers[i].info;相比， xml要慢不少。以下为测试的详情：代码Code...        <a href="https://www.cnblogs.com/dstang2000/archive/2010/11/02/1867406.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <p class="postfoot">
+            posted @ 2010-11-02 17:43
+拓荒者
+<span data-post-id="1867406" class="post-view-count">阅读(972)</span> 
+<span data-post-id="1867406" class="post-comment-count">评论(0)</span> 
+<span data-post-id="1867406" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=1867406" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+    <li>
+        <a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/dstang2000/">
+首页</a>
+
+    </li>
+    <li>
+        
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%8B%93%E8%8D%92%E8%80%85">
+联系</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/dstang2000/rss/">
+订阅</a>
+        
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/dstang2000/rss/">
+    <img src="/skins/anothereon001/images/xml.gif" alt="订阅" />
+</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+    </li>
+</ul>
+
+
+<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a href="https://www.cnblogs.com/" id="footer_site_link">博客园</a>
+	<br />
+	Copyright &copy; 2021 拓荒者
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+</p>
+
+
+</div>
+</div>
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjvckw2yD4mCwZVa5V4N4SjnoFk2WwT3XRJ_tBv_Boz4wqxQH97ya_WJ0IOvP1LJU5dd_AkH0nwGj0UwYRUoB217fRqlPVPlUAEGI88afGN-9Dq0FCwcxdmGH4H5brHxSGs" />
+</body>
+</html>

@@ -8,3 +8,13 @@
 \\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.csproj.CoreCompileInputs.cache
 \\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.exe
 \\vmware-host\Shared Folders\桌面\Homework9\Homework9\obj\Debug\Homework9.pdb
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\bin\Debug\Homework9.exe.config
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\bin\Debug\Homework9.exe
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\bin\Debug\Homework9.pdb
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\obj\Debug\Homework9.csprojAssemblyReference.cache
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\obj\Debug\Homework9.Form1.resources
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\obj\Debug\Homework9.Properties.Resources.resources
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\obj\Debug\Homework9.csproj.GenerateResource.cache
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\obj\Debug\Homework9.csproj.CoreCompileInputs.cache
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\obj\Debug\Homework9.exe
+C:\Users\lucifer\source\repos\myHomework\Homework9\Homework9\obj\Debug\Homework9.pdb

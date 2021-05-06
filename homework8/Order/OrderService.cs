@@ -101,7 +101,10 @@ namespace Order
                         orders.Add(order);
                     }
                 });
-            }
+            } 
+            //foreach(Ordera order in temp){
+            //if(!orders.contains(order){
+          //  orders.Add(order); }
         }
 
     }

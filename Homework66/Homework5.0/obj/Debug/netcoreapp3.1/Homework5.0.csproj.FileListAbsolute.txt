@@ -1,0 +1,12 @@
+/Users/lucifer/Projects/Homework5.0/Homework5.0/bin/Debug/netcoreapp3.1/Homework5.0.deps.json
+/Users/lucifer/Projects/Homework5.0/Homework5.0/bin/Debug/netcoreapp3.1/Homework5.0.runtimeconfig.json
+/Users/lucifer/Projects/Homework5.0/Homework5.0/bin/Debug/netcoreapp3.1/Homework5.0.runtimeconfig.dev.json
+/Users/lucifer/Projects/Homework5.0/Homework5.0/bin/Debug/netcoreapp3.1/Homework5.0.dll
+/Users/lucifer/Projects/Homework5.0/Homework5.0/bin/Debug/netcoreapp3.1/Homework5.0.pdb
+/Users/lucifer/Projects/Homework5.0/Homework5.0/obj/Debug/netcoreapp3.1/Homework5.0.csprojAssemblyReference.cache
+/Users/lucifer/Projects/Homework5.0/Homework5.0/obj/Debug/netcoreapp3.1/Homework5.0.AssemblyInfoInputs.cache
+/Users/lucifer/Projects/Homework5.0/Homework5.0/obj/Debug/netcoreapp3.1/Homework5.0.AssemblyInfo.cs
+/Users/lucifer/Projects/Homework5.0/Homework5.0/obj/Debug/netcoreapp3.1/Homework5.0.csproj.CoreCompileInputs.cache
+/Users/lucifer/Projects/Homework5.0/Homework5.0/obj/Debug/netcoreapp3.1/Homework5.0.dll
+/Users/lucifer/Projects/Homework5.0/Homework5.0/obj/Debug/netcoreapp3.1/Homework5.0.pdb
+/Users/lucifer/Projects/Homework5.0/Homework5.0/obj/Debug/netcoreapp3.1/Homework5.0.genruntimeconfig.cache

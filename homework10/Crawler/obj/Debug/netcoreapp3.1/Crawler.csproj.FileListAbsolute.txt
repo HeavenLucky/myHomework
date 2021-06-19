@@ -1,0 +1,12 @@
+/Users/lucifer/Projects/newHomework/homework9/Crawler/bin/Debug/netcoreapp3.1/Crawler.deps.json
+/Users/lucifer/Projects/newHomework/homework9/Crawler/bin/Debug/netcoreapp3.1/Crawler.runtimeconfig.json
+/Users/lucifer/Projects/newHomework/homework9/Crawler/bin/Debug/netcoreapp3.1/Crawler.runtimeconfig.dev.json
+/Users/lucifer/Projects/newHomework/homework9/Crawler/bin/Debug/netcoreapp3.1/Crawler.dll
+/Users/lucifer/Projects/newHomework/homework9/Crawler/bin/Debug/netcoreapp3.1/Crawler.pdb
+/Users/lucifer/Projects/newHomework/homework9/Crawler/obj/Debug/netcoreapp3.1/Crawler.csprojAssemblyReference.cache
+/Users/lucifer/Projects/newHomework/homework9/Crawler/obj/Debug/netcoreapp3.1/Crawler.AssemblyInfoInputs.cache
+/Users/lucifer/Projects/newHomework/homework9/Crawler/obj/Debug/netcoreapp3.1/Crawler.AssemblyInfo.cs
+/Users/lucifer/Projects/newHomework/homework9/Crawler/obj/Debug/netcoreapp3.1/Crawler.csproj.CoreCompileInputs.cache
+/Users/lucifer/Projects/newHomework/homework9/Crawler/obj/Debug/netcoreapp3.1/Crawler.dll
+/Users/lucifer/Projects/newHomework/homework9/Crawler/obj/Debug/netcoreapp3.1/Crawler.pdb
+/Users/lucifer/Projects/newHomework/homework9/Crawler/obj/Debug/netcoreapp3.1/Crawler.genruntimeconfig.cache

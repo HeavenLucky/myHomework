@@ -1,0 +1,1367 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>博问_程序员问答社区，解决您的IT难题_博客园</title>
+    <meta name="keywords" content="博问,IT问答,IT知识问答,程序员问答,电脑技术问答,IT问题解答" />
+    <meta name="description" content="博问,程序员问答社区,解决你的IT难题。博问是一套IT知识互动式问答分享平台。用户可以根据自身的需求,有针对性地提出问题,同时这些答案又将作为搜索结果,满足有相同或类似问题的用户需求。" />
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <link href="//common.cnblogs.com/favicon.ico" rel="shortcut icon" />
+    <link href="/bundles/css/common.min.css?v=VCUcAopl0ebUDjguadoniKgsH0zvcFX-S885Dl8_E-c" rel="stylesheet" />
+    
+    <link href="/bundles/css/list.min.css?v=oRMkaU26_Z8uUHhQ-oxWuTQdD00B4Yksb1yrnF_GOzE" rel="stylesheet" />
+
+    <script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>
+    <script src="//common.cnblogs.com/script/json2.js" type="text/javascript"></script>
+    <script src="//common.cnblogs.com/script/paste-upload-image.js"></script>
+    <script src="/bundles/js/common.min.js?v=HBULZuTPG9BSN1NK1RvJiRzI-229YUDO1Q_OOD7gYO8" type="text/javascript"></script>
+    <script src="/bundles/js/external.min.js?v=Xdgnt0EXFMdk7OU8cv0i-1-xRjbA51fxvig7OjAjpek" type="text/javascript"></script>
+    <script src="/Component/layer/layer.js?v=TrPmEdEAvVlH00W9X4MnXdAvGlyEq4dQi3zu0iVNtVQ" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        $(function () {
+            $(".current_tab").attr("class", "");
+            $("#second_nav ul li a[href='/list/unsolved']").attr("class", "current_tab");
+            bindask();
+            getMyRank();
+            loadSidebar();
+        });
+    </script>
+
+</head>
+<body>
+    <div id="hd_top" class="clearfix">
+        <div id="hd_top_w">
+            <a href="https://www.cnblogs.com">首页</a>
+            <a href="https://news.cnblogs.com/">新闻</a>
+            <a href="//zzk.cnblogs.com/">搜索</a>
+            <a href="//brands.cnblogs.com/">专区</a>
+            <a href="//academy.cnblogs.com/">学院</a>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="header">
+            <div id="logo">
+                <a href="http://www.cnblogs.com"><img src="//common.cnblogs.com/images/logo/logo20170227.png" alt="logo" style="width:165px;height:55px;" /></a>
+            </div>
+            <div id="nav_block">
+                <a href="http://home.cnblogs.com/">园子</a> · <a href="http://home.cnblogs.com/followees/">关注</a> · <a href="http://home.cnblogs.com/followers/">粉丝</a> ·
+                <a href="http://home.cnblogs.com/feed/all/">随便看看</a> · <a href="http://space.cnblogs.com/msg/recent" target="_blank">消息<span id="msg_count"></span></a>
+            </div>
+            <div class="clear"></div>
+            <div id="header_user">
+                <div class="topbar-left-logo">
+                    <a href="http://www.cnblogs.com"><img class="logo" src="/Images/newsite/cnblogs.svg" alt="博客园"></a>
+                </div>
+                
+<h1 id="header_user_left">
+        欢迎，请先 <a href="javascript:void(0);" onclick="return login();">登录</a> 或者 <a href="javascript:void(0);" onclick="return register();">注册</a> 。
+</h1>
+<div id="header_user_right">
+        <a href="javascript:void(0);" onclick="return login();">登录</a> / <a href="javascript:void(0);" onclick="return register();">注册</a>
+</div>
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="container">
+
+            
+<div id="app_bar">
+    <p class="app_r_3"></p><p class="app_r_2"></p><p class="app_r_1"></p>
+    <div id="app_list_wrapper">
+        <ul class="app_list">
+                        <li>
+                    <img src="//common.cnblogs.com/images/ico_ing.gif" alt="" /><a href="https://ing.cnblogs.com/" id="app_ing">闪存</a>
+                        </li>
+                        <li>
+                    <img src="//common.cnblogs.com/images/ico_blog.gif" alt="" /><a href="https://home.cnblogs.com/blog/" id="app_blog">博客</a>
+                        </li>
+                        <li>
+                            <em><a href="https://group.cnblogs.com/newpost/">发言</a></em>
+                    <img src="//common.cnblogs.com/images/ico_group.gif" alt="" /><a href="https://group.cnblogs.com/" id="app_group">小组</a>
+                        </li>
+                        <li>
+                            <em><a href="https://news.cnblogs.com/n/publish">投递</a></em>
+                    <img src="//common.cnblogs.com/images/ico_news.gif" alt="" /><a href="https://home.cnblogs.com/news/" id="app_news">新闻</a>
+                        </li>
+                        <li class="current">
+                            <em><a href="/q/new">提问</a></em>
+                    <img src="//common.cnblogs.com/images/ico_question.gif" alt="" /><a href="/" id="app_List">博问</a>
+                        </li>
+                        <li>
+                            <em><a href="#" target="_blank" onclick="jutil.cnblogs.addToWz();return false;">添加</a></em>
+                    <img src="//common.cnblogs.com/images/ico_bookmark.gif" alt="" /><a href="https://wz.cnblogs.com/" id="app_wz">收藏</a>
+                        </li>
+                        <li>
+                            <em><a href="https://job.cnblogs.com/admin/">发布</a></em>
+                    <img src="//common.cnblogs.com/images/ico_job.gif" alt="" /><a href="https://home.cnblogs.com/job/" id="app_job">招聘</a>
+                        </li>
+                        <li>
+                    <img src="//common.cnblogs.com/images/ico_kb.gif" alt="" /><a href="https://home.cnblogs.com/kb/" id="app_kb">文库</a>
+                        </li>
+        </ul>
+        <div class="app_setting">
+            <a href="https://group.cnblogs.com/forum/public/" class="flag_edit" target="_blank">问题反馈</a>
+        </div>
+    </div>
+    <p class="app_r_1"></p><p class="app_r_2"></p><p class="app_r_3"></p>
+</div> 
+
+            <div id="container_content">
+
+                <div class="main_nav">
+                    <ul class="topic_nav_block">
+                        <li><a href="/">问题列表</a> </li>
+                        <li><a href="/list/MyStarQuestion">我关注的</a> </li>
+                        <li><a href="/list/myquestion">我的博问</a> </li>
+                        <li><a href="/tag/list">博问标签</a> </li>
+                        <li style="display:none;" id="lasttopnav_li"><a href="javascript:void(0);" id="lasttopnav"></a></li>
+                    </ul>
+                    <div class="clear">
+                    </div>
+                </div>
+
+                <div id="main">
+                    
+
+	<div class="container_content">
+		<div class="left_sidebar">
+			
+<div id="second_nav">
+            <script type="text/javascript">SetCurrNavBlock(0);</script>
+            <ul>
+                <li id="first_nav"><a href="/list/unsolved" title="待解决的问题列表">待解决</a></li>
+                <li><a href="/list/highscore" title="待解决的高分问题">高分</a></li>
+                <li><a href="/list/answered" title="最新被回答的问题列表">新回答</a> </li>
+                <li><a href="/list/newcomment" title="最新被评论的问题列表">新评论</a> </li>
+                <li><a href="/list/noanswer" title="零回答的问题列表">零回答</a> </li>
+                <li><a href="/list/solved" title="已解决的问题列表">已解决</a> </li>
+            </ul>
+</div>
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134269" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">5</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134269/">前端表格关键字过滤</a>
+
+        </h2>
+        <div class="news_summary">
+功能关键字过滤,利用数组A过滤数组B中的值，要求只检测arr中存在的字段，可以用lodash方法 let key = 11; let arr = [&#39;name&#39;,&#39;age&#3        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/chunhaizhilan/" class="author">
+                    <img alt="纯海之蓝的主页" src="//pic.cnblogs.com/face/1803384/20200826123716.png" />
+                </a>
+                <a href="/u/chunhaizhilan/" class="news_contributor">
+                    纯海之蓝
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(0)
+                    <span title="2021-04-23 09:51" class="date">7分钟前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134268" class="news_item">
+        <h2 class="news_entry">
+
+                <a target="_blank" href="/q/134268/">kafka-eagle报错，求各位大神指点</a>
+
+        </h2>
+        <div class="news_summary">
+[root@kafka1:152 logs]$tailf error.log [2021-04-23 08:37:00] KafkaServiceImpl.Thread-13182 - ERROR -        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/zn1986/" class="author">
+                    <img alt="运维僧的主页" src="//pic.cnblogs.com/face/2368425/20210421172910.png" />
+                </a>
+                <a href="/u/zn1986/" class="news_contributor">
+                    运维僧
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(3)
+                    <span title="2021-04-23 08:41" class="date">1小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">1</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134267" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">200</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134267/">金蝶开发的问题</a>
+
+        </h2>
+        <div class="news_summary">
+1、序时簿上的按钮怎么修改单据表体字段，或者实现像老单一样行关闭、结案； 2、插件如何遍历所有表，根据表名读取各表字段值，比如怎么根据产品代码和客户代码读取对应代码、名称、单价、等信息； 3、读取销售        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/%E9%87%91%E8%9D%B6">金蝶</a>
+                        <a class="detail_tag" href="/tag/%E5%BC%80%E5%8F%91">开发</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/2319642/" class="author">
+                    <img alt="小米online的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/2319642/" class="news_contributor">
+                    小米online
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(1)
+                </a>
+                浏览(12)
+                    <span title="2021-04-23 01:27" class="date">8小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">2</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134266" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">10</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134266/">idea打开一片全变成橙色了  求问是怎么回事</a>
+
+        </h2>
+        <div class="news_summary">
+        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/java">java</a>
+                        <a class="detail_tag" href="/tag/idea">idea</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/kuzijing/" class="author">
+                    <img alt="库子井的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/kuzijing/" class="news_contributor">
+                    库子井
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(2)
+                </a>
+                浏览(13)
+                    <span title="2021-04-22 23:58" class="date">9小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134264" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">10</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134264/">nginx缓存问题</a>
+
+        </h2>
+        <div class="news_summary">
+使用nginx做为反向代理的情况下 实际应用跑在iis下 , 只是使用nginx做了目录转发 (IIS下的网站中多个页面使用了同一个模板,但是生成的是多个链接) 遇到一个问题 , 一个链接多点几次的时        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/nginx">nginx</a>
+                        <a class="detail_tag" href="/tag/%E7%BC%93%E5%AD%98">缓存</a>
+                        <a class="detail_tag" href="/tag/nginx%E7%BC%93%E5%AD%98">nginx缓存</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/kaolasz/" class="author">
+                    <img alt="kaolasz的主页" src="//pic.cnblogs.com/face/632020/20200309002758.png" />
+                </a>
+                <a href="/u/kaolasz/" class="news_contributor">
+                    kaolasz
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(14)
+                    <span title="2021-04-22 18:44" class="date">15小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">2</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134263" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">20</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134263/">jquery 跨域请求</a>
+
+        </h2>
+        <div class="news_summary">
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta http-equiv=&quot;Content-Type&quot; content        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/licin/" class="author">
+                    <img alt="名字什么都是浮云的主页" src="//pic.cnblogs.com/face/618680/20200513200512.png" />
+                </a>
+                <a href="/u/licin/" class="news_contributor">
+                    名字什么都是浮云
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(2)
+                </a>
+                浏览(15)
+                    <span title="2021-04-22 18:33" class="date">15小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">1</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134262" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">10</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134262/">Jenkins</a>
+
+        </h2>
+        <div class="news_summary">
+如上图片，配置项目的时候这里的选项卡为什么没有源码管理呢？我是用gitlab管理代码的，我已经安装了Git 插件，gitlab插件，但是还是没见源码管理的选项卡？大家知道是什么原因吗        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/977210/" class="author">
+                    <img alt="lymyyang的主页" src="//pic.cnblogs.com/face/977210/20210309081907.png" />
+                </a>
+                <a href="/u/977210/" class="news_contributor">
+                    lymyyang
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(1)
+                </a>
+                浏览(15)
+                    <span title="2021-04-22 16:56" class="date">17小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134261" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">5</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134261/">solr 如何支持等于查询而不是匹配查询</a>
+
+        </h2>
+        <div class="news_summary">
+在solr中，我有一个文档假设为 [ { &quot;id&quot; : &quot;uuid1&quot; &quot;name&quot; : &quot;hello&quot; }, { &q        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/solr">solr</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/xiaogblog/" class="author">
+                    <img alt="小小爬虫的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/xiaogblog/" class="news_contributor">
+                    小小爬虫
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(11)
+                    <span title="2021-04-22 15:45" class="date">18小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134257" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">15</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134257/">H5前端开发，HBuilder生成异常，求解</a>
+
+        </h2>
+        <div class="news_summary">
+        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/app">app</a>
+                        <a class="detail_tag" href="/tag/%E5%89%8D%E7%AB%AF">前端</a>
+                        <a class="detail_tag" href="/tag/h5">H5</a>
+                        <a class="detail_tag" href="/tag/android">android</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/licin/" class="author">
+                    <img alt="名字什么都是浮云的主页" src="//pic.cnblogs.com/face/618680/20200513200512.png" />
+                </a>
+                <a href="/u/licin/" class="news_contributor">
+                    名字什么都是浮云
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(12)
+                    <span title="2021-04-22 11:31" class="date">22小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">3</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134256" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">10</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134256/">求求主题皮肤</a>
+
+        </h2>
+        <div class="news_summary">
+2222002556 QQ 加我加我加我加我 作者大大        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/annie101230/" class="author">
+                    <img alt="仲秋呀的主页" src="//pic.cnblogs.com/face/2067696/20210422113420.png" />
+                </a>
+                <a href="/u/annie101230/" class="news_contributor">
+                    仲秋呀
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(3)
+                </a>
+                浏览(40)
+                    <span title="2021-04-22 11:17" class="date">22小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">2</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134255" class="news_item">
+        <h2 class="news_entry">
+
+                <a target="_blank" href="/q/134255/">免责和版权声明</a>
+
+        </h2>
+        <div class="news_summary">
+文章最后的免责声明和版权声明，要怎么弄啊        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/qhwl1/" class="author">
+                    <img alt="晴航万里的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/qhwl1/" class="news_contributor">
+                    晴航万里
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(2)
+                </a>
+                浏览(20)
+                    <span title="2021-04-22 10:19" class="date">23小时前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134254" class="news_item">
+        <h2 class="news_entry">
+
+                <a target="_blank" href="/q/134254/">tomcat启动报错</a>
+
+        </h2>
+        <div class="news_summary">
+21-Apr-2021 23:29:32.771 严重 [main] org.apache.catalina.core.StandardService.initInternal Failed to i        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/tomcat%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99">tomcat启动报错</a>
+                        <a class="detail_tag" href="/tag/failed%20to%20initialize%20connector">Failed to initialize connector</a>
+                        <a class="detail_tag" href="/tag/ajp%2F1.3">AJP/1.3</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/we212320/" class="author">
+                    <img alt="we212320的主页" src="//pic.cnblogs.com/face/903246/20160308161243.png" />
+                </a>
+                <a href="/u/we212320/" class="news_contributor">
+                    we212320
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(14)
+                    <span title="2021-04-21 23:41" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134253" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">5</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134253/">vscode 调试c&#x2B;&#x2B;代码时闪退</a>
+
+        </h2>
+        <div class="news_summary">
+在调试的时候闪退 调试控制台显示 ERROR: GDB exited unexpectedly with exit code -1073741819 (0xC0000005). Debugging w        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/vscode">vscode</a>
+                        <a class="detail_tag" href="/tag/cpp">c&#x2B;&#x2B;</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/swtt/" class="author">
+                    <img alt="swtt的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/swtt/" class="news_contributor">
+                    swtt
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(9)
+                    <span title="2021-04-21 21:31" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134251" class="news_item">
+        <h2 class="news_entry">
+
+                <a target="_blank" href="/q/134251/">关于selenium遇到的问题</a>
+
+        </h2>
+        <div class="news_summary">
+在我使用selenium时 发现有两个东西很像 options = webdriver.ChromeOptions()和options = Options（） options = webdriver.        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/python">python</a>
+                        <a class="detail_tag" href="/tag/%E7%88%AC%E8%99%AB">爬虫</a>
+                        <a class="detail_tag" href="/tag/selenium">selenium</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/1912608/" class="author">
+                    <img alt="木三136的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/1912608/" class="news_contributor">
+                    木三136
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(11)
+                    <span title="2021-04-21 17:29" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">3</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134250" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">200</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134250/">【正则表达式】求解答，如何写出能匹配以下3条链接的正则表达式</a>
+
+        </h2>
+        <div class="news_summary">
+https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/15da9d15-e879-4b32-        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/1994037/" class="author">
+                    <img alt="杨喂鱼的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/1994037/" class="news_contributor">
+                    杨喂鱼
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(3)
+                </a>
+                浏览(54)
+                    <span title="2021-04-21 16:20" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">2</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134249" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">10</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134249/">给数据库赋予权限时报（ERROR 1045 (28000): Access denied for user &#x27;aa&#x27;@&#x27;%&#x27; (using password: YES)）</a>
+
+        </h2>
+        <div class="news_summary">
+mysql&gt; GRANT USAGE ON . TO wxshop@%;        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/Gu1015/" class="author">
+                    <img alt="谷先生的主页" src="//pic.cnblogs.com/face/2122338/20210121154545.png" />
+                </a>
+                <a href="/u/Gu1015/" class="news_contributor">
+                    谷先生
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(2)
+                </a>
+                浏览(14)
+                    <span title="2021-04-21 16:13" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">1</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134248" class="news_item">
+        <h2 class="news_entry">
+
+                <a target="_blank" href="/q/134248/">Java用jxl.jar包读取EXCEL</a>
+
+        </h2>
+        <div class="news_summary">
+修改a.xls里面的数据，修改的数据打印不出来，没修改的打印出来了。 File更换路径后什么也打印不出来。 package com.bjsxt.test; import java.io.File; i        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/hghd/" class="author">
+                    <img alt="给对方更多的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/hghd/" class="news_contributor">
+                    给对方更多
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(1)
+                </a>
+                浏览(11)
+                    <span title="2021-04-21 14:38" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134246" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">200</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134246/">java通过utgard连接kepserver报错：0x80010111</a>
+
+        </h2>
+        <div class="news_summary">
+本机配置 报错详情 报错代码： Caused by: org.jinterop.dcom.common.JIRuntimeException: Message not found for errorC        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/0x80010111">0x80010111</a>
+                        <a class="detail_tag" href="/tag/kepserver%E9%85%8D%E7%BD%AE">kepserver配置</a>
+                        <a class="detail_tag" href="/tag/kepserver%E6%8A%A5%E9%94%99">kepserver报错</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/dearxujiee/" class="author">
+                    <img alt="阿拿灯神丁的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/dearxujiee/" class="news_contributor">
+                    阿拿灯神丁
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(12)
+                    <span title="2021-04-21 13:30" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">3</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134245" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">40</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134245/">SPringMVC @ResponseBody 返回数据过大造成内存溢出</a>
+
+        </h2>
+        <div class="news_summary">
+我有一个需求页面查询数据，但是需求必须是要展示全部数据，不能用分页，sql也优化了。 后端查询出数据 使用@ResponseBody 返回JSON数据给客户端，但是 系统报内存溢出的错误，数据大概在6        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/liyangit-bky/" class="author">
+                    <img alt="liyangit的主页" src="//pic.cnblogs.com/face/2110127/20201113112919.png" />
+                </a>
+                <a href="/u/liyangit-bky/" class="news_contributor">
+                    liyangit
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(3)
+                </a>
+                浏览(31)
+                    <span title="2021-04-21 12:25" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">1</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134244" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">30</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134244/">kibana怎么展示全部的beat.hostname?</a>
+
+        </h2>
+        <div class="news_summary">
+ES收集多台服务器日志，kibana页面在展示beat.hostname时只展示top5，怎么能使它展示出全部收集日志的主机名字？ 比如我收集了20台，希望能展示的20台的主机名，而不仅仅是top5？        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/wzj-qwerty/" class="author">
+                    <img alt="芒果~~的主页" src="//pic.cnblogs.com/face/2096880/20201027191014.png" />
+                </a>
+                <a href="/u/wzj-qwerty/" class="news_contributor">
+                    芒果~~
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(1)
+                </a>
+                浏览(19)
+                    <span title="2021-04-21 11:31" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">5</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134243" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">5</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134243/">js字符串比较相等</a>
+
+        </h2>
+        <div class="news_summary">
+为啥两个字符串不相同却进了if里面        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/MrHanBlog/" class="author">
+                    <img alt="灬丶的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/MrHanBlog/" class="news_contributor">
+                    灬丶
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(5)
+                </a>
+                浏览(56)
+                    <span title="2021-04-21 10:30" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134241" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">50</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134241/">Oracle备份报错</a>
+
+        </h2>
+        <div class="news_summary">
+数据库服务器是10，Linux服务器是23，用命令 exp ccense/ccense@ip:1521/orcl full=y file=/home/oracle/20210429.dmp备份。在命令        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/baiyebusan/" class="author">
+                    <img alt="东风神Eurus的主页" src="//pic.cnblogs.com/face/1356458/20200423141734.png" />
+                </a>
+                <a href="/u/baiyebusan/" class="news_contributor">
+                    东风神Eurus
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(16)
+                    <span title="2021-04-21 10:07" class="date">1天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum unanswered">0</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134240" class="news_item">
+        <h2 class="news_entry">
+                <span class="gold">5</span><img alt="" src="//common.cnblogs.com/images/icons/yuandou20170322.png" class="coin-icon" />
+
+                <a target="_blank" href="/q/134240/">java GUI 题目</a>
+
+        </h2>
+        <div class="news_summary">
+编写程序：建立一个班级下拉式列表，列表项中有101班、102班、103班、104班和105班。当点击某个选项的时候，将这个选项的内容复制到按钮文本中。要求字体大小为24号，颜色为红色。        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/java">java</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/2229472/" class="author">
+                    <img alt="赵文清的主页" src="//pic.cnblogs.com/face/2229472/20210420234735.png" />
+                </a>
+                <a href="/u/2229472/" class="news_contributor">
+                    赵文清
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(0)
+                </a>
+                浏览(13)
+                    <span title="2021-04-20 23:45" class="date">2天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">1</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134239" class="news_item">
+        <h2 class="news_entry">
+
+                <a target="_blank" href="/q/134239/">关于css鼠标指针的问题</a>
+
+        </h2>
+        <div class="news_summary">
+我想自定义网站的鼠标指针，将cur文件放在了gitee上的仓库里，请问如何在css中使用它？        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+                        <a class="detail_tag" href="/tag/html">html</a>
+                        <a class="detail_tag" href="/tag/css">css</a>
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/Adrian404/" class="author">
+                    <img alt="Adrian404的主页" src="//pic.cnblogs.com/face/2139896/20210418214525.png" />
+                </a>
+                <a href="/u/Adrian404/" class="news_contributor">
+                    Adrian404
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(1)
+                </a>
+                浏览(38)
+                    <span title="2021-04-20 20:48" class="date">2天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+
+<div class="one_entity">
+    <div class="answercount">
+        <div class="diggit">
+            <div class="diggnum answered">3</div>
+            <div class="diggword">回答数</div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="news_item_134236" class="news_item">
+        <h2 class="news_entry">
+
+                <a target="_blank" href="/q/134236/">关于跨域访问的一些问题？</a>
+
+        </h2>
+        <div class="news_summary">
+webapi 在前端调用报错 目前参考有说只要改动webconfig，这个改完是有一些可以访问 需要两边都配置这个webconfig 最后采用Nugget包Microsoft.AspNet.WebAp        </div>
+        <div class="news_footer">
+            <div class="question-tag-div">
+            </div>
+            <div class="news_footer_user">
+                <a href="/u/2315256/" class="author">
+                    <img alt="cker90的主页" src="//pic.cnblogs.com/default-avatar.png" />
+                </a>
+                <a href="/u/2315256/" class="news_contributor">
+                    cker90
+                </a>
+                <br />
+                <a class="question-answer-count">
+                    回答(3)
+                </a>
+                浏览(33)
+                    <span title="2021-04-20 17:11" class="date">2天前</span>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+
+	<div class="clear"></div>
+<div id='pager'><span class="current">1</span><a href="/list/unsolved?page=2">2</a><a href="/list/unsolved?page=3">3</a><a href="/list/unsolved?page=4">4</a><a href="/list/unsolved?page=5">5</a><a href="/list/unsolved?page=6">6</a><a href="/list/unsolved?page=7">7</a><a href="/list/unsolved?page=8">8</a><a href="/list/unsolved?page=9">9</a><a href="/list/unsolved?page=10">10</a><a href="/list/unsolved?page=11">11</a>···<a href="/list/unsolved?page=160">160</a><a href="/list/unsolved?page=2">Next &gt;</a></div>		</div>
+		
+	</div>
+                </div>
+
+                <div id="right_sidebar">
+                    
+		<div class="sidebar_white">
+    <a href="/q/new"><img id="img_ask" alt="提问" src="/Images/askqesbg.png" /></a>
+    <span id="right_myrank"></span>
+    <div class="right_content_wrapper2">
+        <h2>博问搜索</h2>
+        <div class="ssearch" style="margin:0;">
+            <input type="text" onkeydown="search_answer_enter(event);" class="search-question-box" name="souword" id="souword" />
+            <input type="button" class="search-question-button" onclick="search_answer();return false;" name="btnSearch" />
+        </div>
+    </div>
+    <span id="right_hotcate"></span>
+    <span id="right_weekexpert"></span>
+    <div class="right_content_wrapper2">
+        <h2>关于博问</h2>
+        <ul class="quick_link">
+            <li>» <a href="/q/faq" target="_blank">博问帮助</a> </li>
+            <li>» <a href="/q/RepuRank" target="_blank">声望排名</a> </li>
+            <li>» <a href="/q/rank" target="_blank">园豆排名</a> </li>
+            <li>» <a href="http://space.cnblogs.com/forum/ideas/newpost" target="_blank">发现问题</a> </li>
+            <li>» <a href="http://space.cnblogs.com/forum/bugs/newpost" target="_blank">我有建议</a> </li>
+        </ul>
+    </div>
+    <div class="right_content_ad">
+        <img alt="" src="/Images/ad.gif" />
+    </div>
+</div>
+<script type="text/javascript">
+    function search_answer() {
+        window.location = 'http://zzk.cnblogs.com/s?t=q&w=' + encodeURIComponent($("#souword").val());
+    }
+    function search_answer_enter(event) {
+        if (event.keyCode == 13) {
+            search_answer();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+		
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="footer">
+            <a href="https://about.cnblogs.com">关于博客园</a><a href="https://about.cnblogs.com/contact">联系我们</a><a href="https://about.cnblogs.com/ad">广告合作</a><a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备09004260号-1</a>©2004-2021<a href="http://www.cnblogs.com">博客园</a><span id="powered_by">Powered by .NET on Kubernetes</span><span id="profiler_footer"></span>
+        </div>
+    </div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-16"></script>
+    <script>
+        // 谷歌统计代码
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-476124-16');
+
+        // 百度统计代码
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?7b9c2a7556c09dc889faf454b28b736b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>
